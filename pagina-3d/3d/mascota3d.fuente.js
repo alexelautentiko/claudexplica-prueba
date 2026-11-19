@@ -1,4 +1,4 @@
-// La mascota en 3D. Se carga en diferido, después del salto a Claude.
+// La mascota en 3D. Se carga en diferido, cuando la página ya está pintada.
 // Si algo falla (sin WebGL, sin red, modelo roto), no hace nada: en la página se queda la imagen 2D.
 import {
   WebGLRenderer, Scene, PerspectiveCamera, HemisphereLight, DirectionalLight,
@@ -8,14 +8,22 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js';
 
 const GRADOS = Math.PI / 180;
+const VUELTA = Math.PI * 2;
 const BASE = -12 * GRADOS;    // la pose de la imagen: un poco girada, con la cola a la vista
 const VAIVEN = 15 * GRADOS;   // lo que se balancea sola
-const TOPE = 20 * GRADOS;     // nunca más de ±20° desde la base: la espalda (inventada) no se enseña
+const POR_PIXEL = 0.014;      // lo que gira por cada píxel de arrastre: el ancho de un móvil es casi una vuelta
+const ROCE = 2.4;             // lo deprisa que se frena al soltarla
+const ESPERA = 1600;          // ms quieta, ya suelta, antes de volver de frente
+const VEL_MAX = 14;           // rad/s: un tope al impulso
 const acotar = (v, a, b) => Math.min(b, Math.max(a, v));
 
 export function montar(caja) {
   if (!caja || caja.dataset.m3d) return;
   caja.dataset.m3d = '1';
+
+  // Para revisar el modelo por todos lados: ?giro=180 lo deja quieto en ese ángulo.
+  const pedido = /[?&]giro=(-?\d+)/.exec(location.search);
+  const fijo = pedido ? Number(pedido[1]) * GRADOS : null;
 
   const lienzo = document.createElement('canvas');
   lienzo.className = 'lienzo';
@@ -46,17 +54,39 @@ export function montar(caja) {
   }
 
   let listo = false, pintado = false, cancelado = false, raf = 0;
-  let enVista = true, t0 = 0;
-  let agarrado = false, agarre = 0, x0 = 0, empuje = 0, empujeSuave = 0;
+  let enVista = true, t0 = 0, antes = 0;
+  // El giro que le da la persona: sin tope, da la vuelta entera. Al soltar sigue con el impulso,
+  // se frena y, tras una pausa, vuelve de frente por el camino corto.
+  let agarrado = false, xAntes = 0, tAntes = 0, soltadoEn = 0;
+  let angulo = 0, vel = 0, libre = 0;
+  let empuje = 0, empujeSuave = 0;
 
   function cuadro(ahora) {
     raf = requestAnimationFrame(cuadro);
-    if (!t0) t0 = ahora;
+    if (!t0) { t0 = ahora; antes = ahora; }
     const t = (ahora - t0) / 1000;
-    agarre += ((agarrado ? 1 : 0) - agarre) * 0.12;
-    empujeSuave += (empuje - empujeSuave) * 0.1;
-    const giro = acotar(Math.sin(t * 0.7) * VAIVEN * (1 - agarre) + empujeSuave, -TOPE, TOPE);
-    pivote.rotation.y = BASE + giro;
+    const dt = Math.min(0.05, (ahora - antes) / 1000);
+    antes = ahora;
+
+    if (fijo !== null) {
+      pivote.rotation.y = BASE + fijo;
+    } else {
+      const casa = Math.round(angulo / VUELTA) * VUELTA;
+      if (!agarrado) {
+        angulo += vel * dt;
+        vel *= Math.exp(-ROCE * dt);
+        if (Math.abs(vel) < 0.25 && performance.now() - soltadoEn > ESPERA) {
+          vel = 0;
+          angulo += (casa - angulo) * (1 - Math.exp(-3 * dt));
+          if (Math.abs(casa - angulo) < 0.0005) angulo = casa;
+        }
+      }
+      // El balanceo y el seguimiento del ratón solo cuando está de frente y suelta.
+      const enCasa = !agarrado && Math.abs(vel) < 0.25 && Math.abs(casa - angulo) < 0.35;
+      libre += ((enCasa ? 1 : 0) - libre) * (1 - Math.exp(-4 * dt));
+      empujeSuave += (empuje - empujeSuave) * 0.1;
+      pivote.rotation.y = BASE + angulo + (Math.sin(t * 0.7) * VAIVEN + empujeSuave) * libre;
+    }
     pivote.rotation.x = Math.sin(t * 0.9 + 1) * 0.02;
     pivote.position.y = Math.sin(t * 1.4) * 0.018;
     renderer.render(escena, camara);
@@ -101,21 +131,35 @@ export function montar(caja) {
     arrancar();
   }, undefined, () => { clearTimeout(plazo); rendirse(); });
 
-  // Con el dedo o el ratón se puede girar un poco; al soltar, vuelve sola.
-  lienzo.addEventListener('pointerdown', (e) => {
-    agarrado = true; x0 = e.clientX;
-    try { lienzo.setPointerCapture(e.pointerId); } catch (err) {}
-  });
-  lienzo.addEventListener('pointermove', (e) => {
-    if (agarrado) empuje = acotar((e.clientX - x0) * 0.012, -TOPE, TOPE);
-  });
-  const soltar = () => { agarrado = false; empuje = 0; };
-  lienzo.addEventListener('pointerup', soltar);
-  lienzo.addEventListener('pointercancel', soltar);
-  if (window.matchMedia && matchMedia('(pointer: fine)').matches) {
-    window.addEventListener('pointermove', (e) => {
-      if (!agarrado) empuje = ((e.clientX / window.innerWidth) - 0.5) * 2 * 7 * GRADOS;
-    }, { passive: true });
+  // Con el dedo o el ratón se le da la vuelta entera. El arrastre vertical sigue moviendo la página
+  // (touch-action: pan-y en la hoja de estilos), así que solo cuenta el horizontal.
+  if (fijo === null) {
+    lienzo.addEventListener('pointerdown', (e) => {
+      agarrado = true; xAntes = e.clientX; tAntes = performance.now(); vel = 0;
+      try { lienzo.setPointerCapture(e.pointerId); } catch (err) {}
+    });
+    lienzo.addEventListener('pointermove', (e) => {
+      if (!agarrado) return;
+      const ahora = performance.now();
+      const paso = (e.clientX - xAntes) * POR_PIXEL;
+      const dt = Math.max(0.008, (ahora - tAntes) / 1000);
+      angulo += paso;
+      vel = acotar(vel * 0.5 + (paso / dt) * 0.5, -VEL_MAX, VEL_MAX);
+      xAntes = e.clientX; tAntes = ahora;
+    });
+    const soltar = () => {
+      if (!agarrado) return;
+      agarrado = false; soltadoEn = performance.now();
+      // Si el dedo se paró antes de levantarse, no hay impulso.
+      if (soltadoEn - tAntes > 90) vel = 0;
+    };
+    lienzo.addEventListener('pointerup', soltar);
+    lienzo.addEventListener('pointercancel', soltar);
+    if (window.matchMedia && matchMedia('(pointer: fine)').matches) {
+      window.addEventListener('pointermove', (e) => {
+        if (!agarrado) empuje = ((e.clientX / window.innerWidth) - 0.5) * 2 * 7 * GRADOS;
+      }, { passive: true });
+    }
   }
 
   // No gasta batería si no se ve.

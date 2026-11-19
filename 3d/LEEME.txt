@@ -10,3 +10,6 @@ Para rehacer mascota3d.js después de tocar la fuente (en una carpeta con «npm 
 
 Si este archivo, el modelo o WebGL fallan, la página enseña la imagen mascota.webp y todo lo demás funciona igual.
 Para verla sin 3D: añadir ?sin3d (o &sin3d) a la dirección.
+
+Con el dedo o el ratón se le da la vuelta entera (desde el 19-nov-2026; antes giraba ±20°). Al soltarla sigue con el
+impulso, se frena y vuelve de frente. Para dejarla quieta en un ángulo y revisar el modelo: ?giro=180 (grados).
