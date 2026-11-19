@@ -13,19 +13,15 @@
 <link rel="icon" type="image/png" href="icono.png">
 <link rel="preload" href="fuentes/inter.woff2" as="font" type="font/woff2" crossorigin>
 <script>
-  // Antes de pintar: ¿esta visita va a intentar abrir Claude sola?
-  // ?ver=abriendo y ?ver=boton enseñan cada estado sin saltar (para revisar el diseño).
+  // La página no salta sola (decidido por Alex el 19-nov): enseña los botones
+  // y Claude se abre cuando la persona pulsa «Abrir en Claude».
+  // Para volver al salto automático: poner cxSalta a true donde se quiera.
+  // ?ver=abriendo enseña el estado «abriendo», que ya no sale solo (para revisar el diseño).
   (function () {
-    var ua = navigator.userAgent || '';
     var ver = (/[?&]ver=([a-z]+)/.exec(location.search) || [])[1] || '';
-    var android = /Android/i.test(ua), ios = /iPhone|iPad|iPod/i.test(ua), instagram = /Instagram/i.test(ua);
-    var ya = false;
-    try { ya = sessionStorage.getItem('salto') === '1'; } catch (e) {}
-    // Solo salta sola donde está probado: el ordenador y Android dentro de Instagram.
-    var probado = (!android && !ios) || (android && instagram);
     window.cxVer = ver;
-    window.cxSalta = ver ? false : (probado && !ya);
-    if (window.cxSalta || ver === 'abriendo') document.documentElement.className = 'abriendo';
+    window.cxSalta = false;
+    if (ver === 'abriendo') document.documentElement.className = 'abriendo';
   })();
 </script>
 <style>
