@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFF4E6">
+<title>Claudexplica · Empieza aquí</title>
+<meta name="description" content="La herramienta de vídeo que usa Claude en nuestros pasos, en español.">
+<link rel="icon" type="image/png" href="../icono.png">
+<link rel="preload" href="../fuentes/inter.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face { font-family: "Inter"; src: url("../fuentes/inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+  @font-face { font-family: "JetBrains Mono"; src: url("../fuentes/jetbrains-mono.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+
+  :root { --papel: #FFF4E6; --tinta: #15110D; --naranja: #E8590C; --linea: #E9D8C2; --suave: #6B5E50; }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; min-height: 100vh; min-height: 100dvh; background: var(--papel); color: var(--tinta);
+         font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 17px; line-height: 1.45;
+         display: flex; flex-direction: column; }
+  main { flex: 1; width: 100%; max-width: 440px; margin: 0 auto; padding: 28px 20px 24px; text-align: center; }
+
+  .marca { margin: 0; font-family: "JetBrains Mono", ui-monospace, Consolas, monospace; font-size: 13px; letter-spacing: .06em;
+           text-transform: uppercase; color: var(--naranja); }
+  .mascota { display: block; width: 132px; height: auto; margin: 20px auto 12px; }
+  h1 { margin: 0 0 10px; font-size: 31px; line-height: 1.12; font-weight: 850; letter-spacing: -.02em; text-wrap: balance; }
+  h1 em { font-style: normal; color: var(--naranja); }
+  .sub { margin: 0 auto; max-width: 34ch; color: var(--suave); text-wrap: pretty; }
+
+  .pasos { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 14px; text-align: left; }
+  .paso { background: #fff; border: 1px solid var(--linea); border-radius: 18px; padding: 16px; }
+  .paso .num { margin: 0 0 4px; font-family: "JetBrains Mono", ui-monospace, Consolas, monospace; font-size: 13px; letter-spacing: .06em;
+         text-transform: uppercase; color: var(--naranja); }
+  .paso h2 { margin: 0 0 6px; font-size: 19px; line-height: 1.2; font-weight: 800; }
+  .paso p { margin: 0 0 12px; font-size: 15px; color: var(--suave); }
+  .codigo { font-family: "JetBrains Mono", ui-monospace, Consolas, monospace; font-size: 14px; color: var(--tinta);
+            background: var(--papel); border: 1px solid var(--linea); border-radius: 6px; padding: 1px 6px; white-space: nowrap; }
+
+  .boton { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 56px; padding: 12px 16px;
+           border-radius: 14px; border: 2px solid var(--tinta); background: transparent; color: var(--tinta);
+           font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .boton.principal { background: var(--naranja); border-color: var(--naranja); font-size: 18px; font-weight: 800;
+           box-shadow: 0 6px 0 #B8440A; transition: transform .08s ease, box-shadow .08s ease; }
+  .boton.principal:active { transform: translateY(4px); box-shadow: 0 2px 0 #B8440A; }
+  .boton:focus-visible { outline: 3px solid var(--tinta); outline-offset: 3px; }
+  .flecha { font-size: 21px; line-height: 1; }
+
+  footer { padding: 16px 20px 22px; text-align: center; font-size: 13px; color: var(--suave); }
+</style>
+</head>
+<body>
+<main>
+  <p class="marca">@claudexplica</p>
+  <img class="mascota" src="../mascota.webp" width="360" height="337" alt="">
+
+  <h1>Vídeos con Claude, <em>en dos pasos.</em></h1>
+  <p class="sub">Sin salir en cámara. Claude escribe el guion y Revid pone la voz, las imágenes y la música.</p>
+
+  <ol class="pasos">
+    <li class="paso">
+      <p class="num">Paso 1</p>
+      <h2>Crea tu cuenta de Revid</h2>
+      <p>Es gratis y no pide tarjeta. Para generar vídeos hace falta un plan: con el código <span class="codigo">CLAUDEXPLICA</span>, el primer mes cuesta un 20&nbsp;% menos.</p>
+      <a class="boton principal" id="cuenta" href="https://www.revid.ai/es?via=aferncult" rel="noopener">Crear mi cuenta <span class="flecha" aria-hidden="true">→</span></a>
+    </li>
+    <li class="paso">
+      <p class="num">Paso 2</p>
+      <h2>Abre Claude con el mensaje ya escrito</h2>
+      <p>Te pregunta el tema y te guía paso a paso.</p>
+      <a class="boton" href="../">Abrir en Claude</a>
+    </li>
+  </ol>
+</main>
+<footer>Cuenta no oficial de Claude.</footer>
+
+<script>
+(function () {
+  // Dentro de Instagram o Facebook en Android, el botón abre la misma dirección en Chrome:
+  // allí funciona el registro con Google y la visita queda en el navegador de verdad.
+  var ua = navigator.userAgent || '';
+  var android = /Android/i.test(ua);
+  var dentro = /Instagram|FBAN|FBAV/i.test(ua);
+  var a = document.getElementById('cuenta');
+  var destino = a.href;
+  if (android && dentro) {
+    a.href = 'intent://' + destino.replace(/^https:\/\//, '') +
+      '#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + encodeURIComponent(destino) + ';end';
+  }
+})();
+</script>
+</body>
+</html>
