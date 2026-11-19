@@ -1,6 +1,6 @@
 # El sistema para crear vídeos faceless con Claude
 
-Guía de @claudexplica. Versión D3, del 19 de noviembre de 2026.
+Guía de @claudexplica. Versión D4, del 19 de noviembre de 2026.
 
 Este es el sistema de @claudexplica para crear vídeos faceless: vídeos cortos para TikTok, Instagram y YouTube, hechos desde un chat de Claude y sin salir en cámara. Claude encuentra qué funciona en tu tema y escribe el guion. Revid, la herramienta de vídeo, pone la voz, las imágenes, los subtítulos y la música, y lo publica.
 
@@ -18,10 +18,12 @@ Son tres pasos:
 
 ## Preparación, una sola vez
 
+Por este orden: primero la cuenta y después el conector.
+
 1. Crear la cuenta de Revid desde este enlace: https://www.revid.ai/?via=aferncult
 2. Abrir los conectores de Claude: https://claude.ai/customize/connectors (en el menú de Claude, «Customize» y «Connectors»). Se hace en claude.ai desde un navegador o en la app del ordenador; una vez puesto, el conector sirve también en la app del móvil.
-3. Pulsar «Add» y «Add custom connector». Nombre: Revid. Dirección: https://www.revid.ai/api/mcp
-4. Seguir hasta «Add», iniciar sesión con la cuenta de Revid y aprobar el acceso.
+3. Pulsar «Add» y «Add custom connector». Nombre: Revid. En la casilla de la dirección se pega esto, tal cual: `https://www.revid.ai/api/mcp`. Es una dirección para Claude: abierta en el navegador solo da un error.
+4. Seguir hasta «Add». Se abre Revid para iniciar sesión: se entra con la cuenta del punto 1 y se aprueba el acceso.
 5. De vuelta en el chat, mirar que Revid está activado: botón «+» y «Connectors». Si Claude sigue sin verlo, se abre una conversación nueva.
 
 La primera vez que Claude usa Revid pide permiso: se acepta.
@@ -39,7 +41,7 @@ Claude devuelve los vídeos con sus vistas, su texto completo y su primera frase
    - Con vídeos de archivo: unos 33 créditos. Con el plan Growth, unos 60 vídeos al mes.
    - Con imágenes en movimiento: 37 créditos, o 59 con música hecha a medida. De 33 a 54 vídeos al mes.
    - Con vídeo generado por IA: unos 360 créditos. Unos 5 vídeos al mes.
-3. Si no hay plan, este es el momento de elegirlo en Revid. Al pagar, se escribe el código CLAUDEXPLICA.
+3. Si no hay plan, este es el momento de elegirlo en Revid. Al pagar, se escribe el código CLAUDEXPLICA: un 20 % menos el primer mes.
 4. Claude lanza el vídeo y avisa cuando está listo, con el enlace para verlo.
 5. Si algo no convence (una frase, una imagen, la voz), se le pide el cambio: Claude lo corrige sobre el mismo vídeo, sin hacerlo de nuevo.
 
@@ -59,4 +61,4 @@ Las cuentas de TikTok, YouTube e Instagram se conectan en los ajustes de Revid. 
 
 - Claude dice que no tiene Revid: se activa en el botón «+», «Connectors», o se abre una conversación nueva.
 - Claude no deja añadir el conector: con Claude gratis solo cabe uno personalizado. Se quita el que haya.
-- Al generar avisa de que hace falta un plan: buscar y calcular el precio van con la cuenta gratis; generar pide un plan activo, aunque queden créditos.
+- Al generar avisa de que hace falta un plan: buscar y calcular el precio van con la cuenta gratis; generar pide un plan activo, aunque queden créditos. Al pagarlo, el código CLAUDEXPLICA.
