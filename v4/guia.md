@@ -6,7 +6,7 @@ Esta guía explica cómo hacer vídeos cortos para TikTok, Instagram y YouTube d
 
 ## Qué hace falta
 
-- Una cuenta de Claude. Sirve la gratuita.
+- Una cuenta de Claude. Sirve la gratuita, que admite un solo conector personalizado: si ya hay otro puesto, hay que quitarlo antes de añadir Revid.
 - Una cuenta de Revid. Crearla es gratis y no pide tarjeta. Con la cuenta gratis, Claude ya puede buscar qué vídeos funcionan en un tema (20 búsquedas al día) y calcular cuánto costará un vídeo antes de hacerlo.
 - Para generar el vídeo hace falta un plan de Revid. El plan Growth cuesta 39 dólares al mes y trae 2.000 créditos. Con el código CLAUDEXPLICA, el primer mes sale un 20 % más barato. Se escribe al pagar.
 
