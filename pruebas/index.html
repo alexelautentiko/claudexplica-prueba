@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>claudexplica · prueba de enlaces</title>
+<style>
+  :root { --papel: #FFF4E6; --tinta: #15110D; --naranja: #E8590C; --linea: #E6D5BF; --suave: #6B5E50; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--papel); color: var(--tinta);
+         font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.45; }
+  main { max-width: 560px; margin: 0 auto; padding: 28px 16px 56px; }
+  .tag { font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--naranja); font-weight: 700; margin: 0 0 8px; }
+  h1 { font-size: 28px; line-height: 1.15; margin: 0 0 10px; }
+  h2 { font-size: 17px; margin: 32px 0 8px; }
+  p { margin: 0 0 12px; }
+  #entorno { font-size: 14px; color: var(--suave); background: #fff; border: 1px solid var(--linea); border-radius: 12px; padding: 10px 12px; }
+  ol { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 12px; }
+  a.boton, button.boton { display: flex; gap: 12px; align-items: center; width: 100%; min-height: 60px; padding: 12px 14px;
+       border-radius: 14px; border: 2px solid var(--tinta); background: #fff; color: var(--tinta);
+       text-decoration: none; font: inherit; text-align: left; cursor: pointer; }
+  a.boton.principal { background: var(--naranja); border-color: var(--naranja); color: #fff; }
+  .letra { flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
+       font-weight: 800; background: var(--tinta); color: var(--papel); }
+  .principal .letra { background: #fff; color: var(--naranja); }
+  .texto b { display: block; font-size: 16px; }
+  .texto span { display: block; font-size: 13px; opacity: .8; }
+  .oculto { display: none; }
+  pre { white-space: pre-wrap; word-break: break-word; background: #fff; border: 1px solid var(--linea); border-radius: 12px;
+       padding: 12px; font: 13px/1.5 "JetBrains Mono", ui-monospace, Consolas, monospace; margin: 0; }
+  details { margin-top: 28px; }
+  summary { cursor: pointer; font-weight: 700; color: var(--suave); }
+  .nota { font-size: 14px; color: var(--suave); }
+  #aviso { min-height: 22px; font-weight: 700; color: var(--naranja); margin-top: 10px; }
+</style>
+</head>
+<body>
+<main>
+  <p class="tag">Página de prueba · cuenta no oficial</p>
+  <h1>Abrir Claude con el prompt ya escrito</h1>
+  <p id="entorno"></p>
+
+  <h2>Así quedaría</h2>
+  <ol>
+    <li><a class="boton principal" id="abrir" rel="noopener"><span class="letra">→</span><span class="texto"><b>Abrir en Claude</b><span>Copia el prompt y abre Claude</span></span></a></li>
+    <li><button class="boton" id="copiar" type="button"><span class="letra">⧉</span><span class="texto"><b>Solo copiar el prompt</b><span>Para pegarlo a mano en Claude</span></span></button></li>
+  </ol>
+  <p id="aviso" role="status"></p>
+  <p class="nota">¿Se ha abierto Claude sin el texto escrito? Ya lo tienes copiado: pega y envía.</p>
+
+  <details>
+  <summary>Botones de prueba, una vía cada uno (prueba 3)</summary>
+  <ol>
+    <li><a class="boton" id="a" rel="noopener"><span class="letra">A</span><span class="texto"><b>Abrir en Claude</b><span>Enlace normal a claude.ai</span></span></a></li>
+    <li><a class="boton" id="b"><span class="letra">B</span><span class="texto"><b>Abrir la app de Claude</b><span>Enlace propio de la app (claude://)</span></span></a></li>
+    <li class="android"><a class="boton" id="c"><span class="letra">C</span><span class="texto"><b>Abrir la app de Claude (Android)</b><span>Pide a Android que lo abra la app</span></span></a></li>
+    <li class="android"><a class="boton" id="d"><span class="letra">D</span><span class="texto"><b>Abrir en Chrome (Android)</b><span>Sale del navegador de Instagram</span></span></a></li>
+    <li class="ios"><a class="boton" id="e"><span class="letra">E</span><span class="texto"><b>Abrir en el navegador del iPhone</b><span>Sale del navegador de Instagram</span></span></a></li>
+    <li><button class="boton" id="f" type="button"><span class="letra">F</span><span class="texto"><b>Copiar el prompt</b><span>Para pegarlo a mano en Claude</span></span></button></li>
+  </ol>
+  </details>
+
+  <h2>El prompt</h2>
+  <pre id="prompt"></pre>
+</main>
+
+<script>
+  var PROMPT = [
+    'Quiero crear algo con Claude. Lee esta guía de recetas, el texto completo:',
+    'https://raw.githubusercontent.com/alexelautentiko/claudexplica-prueba/main/v3/guia.md',
+    'Pregúntame cuál de sus recetas quiero y guíame paso a paso, un paso cada vez. Dime qué versión de la guía has leído.',
+    'Si no puedes abrirla, dímelo y no sigas.',
+    'Y recuerda esta guía para la próxima vez que quiera montar algo con Claude.'
+  ].join('\n');
+
+  var ua = navigator.userAgent || '';
+  var android = /Android/i.test(ua);
+  var ios = /iPhone|iPad|iPod/i.test(ua);
+  var instagram = /Instagram/i.test(ua);
+  var facebook = /FBAN|FBAV/i.test(ua);
+
+  var q = encodeURIComponent(PROMPT);
+  var web = 'https://claude.ai/new?q=' + q;
+  var ruta = 'claude.ai/new?q=' + q;
+  var reserva = encodeURIComponent(web);
+
+  document.getElementById('prompt').textContent = PROMPT;
+  document.getElementById('entorno').textContent =
+    'Dónde estás: ' + (android ? 'Android' : ios ? 'iPhone o iPad' : 'ordenador') +
+    ' · ' + (instagram ? 'dentro de Instagram' : facebook ? 'dentro de Facebook' : 'navegador normal');
+
+  document.getElementById('a').href = web;
+  document.getElementById('b').href = 'claude://' + ruta;
+  document.getElementById('c').href = 'intent://' + ruta + '#Intent;scheme=https;package=com.anthropic.claude;S.browser_fallback_url=' + reserva + ';end';
+  document.getElementById('d').href = 'intent://' + ruta + '#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + reserva + ';end';
+  document.getElementById('e').href = instagram
+    ? 'instagram://extbrowser/?url=' + encodeURIComponent(web)
+    : 'x-safari-https://' + ruta;
+
+  // La vía principal según dónde se abre la página.
+  var principal = web;
+  if (android) principal = document.getElementById('c').href;
+  else if (ios && (instagram || facebook)) principal = document.getElementById('e').href;
+  document.getElementById('abrir').href = principal;
+
+  var i, nodos;
+  if (!android) { nodos = document.querySelectorAll('.android'); for (i = 0; i < nodos.length; i++) nodos[i].className += ' oculto'; }
+  if (!ios) { nodos = document.querySelectorAll('.ios'); for (i = 0; i < nodos.length; i++) nodos[i].className += ' oculto'; }
+
+  function avisar(t) { document.getElementById('aviso').textContent = t; }
+  function copiarAntiguo() {
+    var ta = document.createElement('textarea');
+    ta.value = PROMPT; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    avisar(ok ? 'Copiado. Ábrelo en Claude y pega.' : 'No se ha podido copiar: mantén pulsado el texto de abajo.');
+  }
+  function copiar() {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(PROMPT).then(function () { avisar('Copiado. Ábrelo en Claude y pega.'); }, copiarAntiguo);
+    } else { copiarAntiguo(); }
+  }
+  document.getElementById('f').addEventListener('click', copiar);
+  document.getElementById('copiar').addEventListener('click', copiar);
+  // «Abrir en Claude» copia primero (sin esperar) y deja que el enlace siga su camino.
+  document.getElementById('abrir').addEventListener('click', function () { copiarAntiguo(); copiar(); });
+</script>
+</body>
+</html>

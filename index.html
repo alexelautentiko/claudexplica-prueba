@@ -4,74 +4,118 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>claudexplica · prueba de enlaces</title>
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFF4E6">
+<title>Claudexplica · Vídeos con Claude</title>
+<meta name="description" content="Haz vídeos con Claude, sin salir en cámara. Se abre Claude con el mensaje ya escrito y te guía paso a paso.">
+<meta property="og:title" content="Haz vídeos con Claude, sin salir en cámara">
+<meta property="og:description" content="Se abre Claude con el mensaje ya escrito. Te pregunta el tema y te guía paso a paso.">
+<link rel="icon" type="image/png" href="icono.png">
+<link rel="preload" href="fuentes/inter.woff2" as="font" type="font/woff2" crossorigin>
+<script>
+  // Antes de pintar: ¿esta visita va a intentar abrir Claude sola?
+  // ?ver=abriendo y ?ver=boton enseñan cada estado sin saltar (para revisar el diseño).
+  (function () {
+    var ua = navigator.userAgent || '';
+    var ver = (/[?&]ver=([a-z]+)/.exec(location.search) || [])[1] || '';
+    var android = /Android/i.test(ua), ios = /iPhone|iPad|iPod/i.test(ua), instagram = /Instagram/i.test(ua);
+    var ya = false;
+    try { ya = sessionStorage.getItem('salto') === '1'; } catch (e) {}
+    // Solo salta sola donde está probado: el ordenador y Android dentro de Instagram.
+    var probado = (!android && !ios) || (android && instagram);
+    window.cxVer = ver;
+    window.cxSalta = ver ? false : (probado && !ya);
+    if (window.cxSalta || ver === 'abriendo') document.documentElement.className = 'abriendo';
+  })();
+</script>
 <style>
-  :root { --papel: #FFF4E6; --tinta: #15110D; --naranja: #E8590C; --linea: #E6D5BF; --suave: #6B5E50; }
+  @font-face { font-family: "Inter"; src: url("fuentes/inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+  @font-face { font-family: "JetBrains Mono"; src: url("fuentes/jetbrains-mono.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+
+  :root { --papel: #FFF4E6; --tinta: #15110D; --naranja: #E8590C; --linea: #E9D8C2; --suave: #6B5E50; }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--papel); color: var(--tinta);
-         font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.45; }
-  main { max-width: 560px; margin: 0 auto; padding: 28px 16px 56px; }
-  .tag { font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--naranja); font-weight: 700; margin: 0 0 8px; }
-  h1 { font-size: 28px; line-height: 1.15; margin: 0 0 10px; }
-  h2 { font-size: 17px; margin: 32px 0 8px; }
-  p { margin: 0 0 12px; }
-  #entorno { font-size: 14px; color: var(--suave); background: #fff; border: 1px solid var(--linea); border-radius: 12px; padding: 10px 12px; }
-  ol { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 12px; }
-  a.boton, button.boton { display: flex; gap: 12px; align-items: center; width: 100%; min-height: 60px; padding: 12px 14px;
-       border-radius: 14px; border: 2px solid var(--tinta); background: #fff; color: var(--tinta);
-       text-decoration: none; font: inherit; text-align: left; cursor: pointer; }
-  a.boton.principal { background: var(--naranja); border-color: var(--naranja); color: #fff; }
-  .letra { flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
-       font-weight: 800; background: var(--tinta); color: var(--papel); }
-  .principal .letra { background: #fff; color: var(--naranja); }
-  .texto b { display: block; font-size: 16px; }
-  .texto span { display: block; font-size: 13px; opacity: .8; }
-  .oculto { display: none; }
-  pre { white-space: pre-wrap; word-break: break-word; background: #fff; border: 1px solid var(--linea); border-radius: 12px;
-       padding: 12px; font: 13px/1.5 "JetBrains Mono", ui-monospace, Consolas, monospace; margin: 0; }
-  details { margin-top: 28px; }
-  summary { cursor: pointer; font-weight: 700; color: var(--suave); }
-  .nota { font-size: 14px; color: var(--suave); }
-  #aviso { min-height: 22px; font-weight: 700; color: var(--naranja); margin-top: 10px; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; min-height: 100vh; min-height: 100dvh; background: var(--papel); color: var(--tinta);
+         font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 17px; line-height: 1.45;
+         display: flex; flex-direction: column; }
+  main { flex: 1; width: 100%; max-width: 440px; margin: 0 auto; padding: 28px 20px 24px; text-align: center; }
+
+  .marca { margin: 0; font-family: "JetBrains Mono", ui-monospace, Consolas, monospace; font-size: 13px; letter-spacing: .06em;
+           text-transform: uppercase; color: var(--naranja); }
+  .mascota { display: block; width: 148px; height: auto; margin: 22px auto 14px; }
+  h1 { margin: 0 0 10px; font-size: 31px; line-height: 1.12; font-weight: 850; letter-spacing: -.02em; text-wrap: balance; }
+  h1 em { font-style: normal; color: var(--naranja); }
+  .sub { margin: 0 auto; max-width: 34ch; color: var(--suave); text-wrap: pretty; }
+  .pista { margin: 14px auto 0; max-width: 34ch; font-size: 15px; font-weight: 650; }
+
+  /* Dos estados: «abriendo» (la página salta sola) y el del botón. */
+  .en-abriendo { display: none; }
+  .abriendo .en-abriendo { display: block; }
+  .abriendo .en-boton { display: none; }
+  .abriendo .mascota { animation: flotar 2.2s ease-in-out infinite; }
+  @keyframes flotar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+  @media (prefers-reduced-motion: reduce) { .abriendo .mascota { animation: none; } }
+
+  .acciones { margin-top: 24px; display: grid; gap: 12px; }
+  .boton { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 60px; padding: 14px 18px;
+           border-radius: 16px; border: 2px solid var(--tinta); background: transparent; color: var(--tinta);
+           font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .boton.principal { background: var(--naranja); border-color: var(--naranja); font-size: 19px; font-weight: 800;
+           box-shadow: 0 6px 0 #B8440A; transition: transform .08s ease, box-shadow .08s ease; }
+  .boton.principal:active { transform: translateY(4px); box-shadow: 0 2px 0 #B8440A; }
+  .boton:focus-visible, summary:focus-visible, a:focus-visible { outline: 3px solid var(--tinta); outline-offset: 3px; }
+  .flecha { font-size: 22px; line-height: 1; }
+  #aviso { min-height: 22px; margin: 2px 0 0; font-size: 15px; font-weight: 650; color: var(--tinta); }
+  .enlace { margin: 0; font-size: 15px; color: var(--suave); }
+  .enlace a { color: var(--tinta); font-weight: 700; }
+  [hidden] { display: none !important; }
+
+  details { margin-top: 6px; text-align: left; }
+  summary { cursor: pointer; text-align: center; font-size: 15px; font-weight: 650; color: var(--suave); padding: 8px; border-radius: 10px; }
+  pre { margin: 8px 0 0; padding: 14px; white-space: pre-wrap; word-break: break-word; background: #fff; border: 1px solid var(--linea);
+        border-radius: 14px; font: 13px/1.55 "JetBrains Mono", ui-monospace, Consolas, monospace; }
+
+  footer { padding: 16px 20px 22px; text-align: center; font-size: 13px; color: var(--suave); }
 </style>
 </head>
 <body>
 <main>
-  <p class="tag">Página de prueba · cuenta no oficial</p>
-  <h1>Abrir Claude con el prompt ya escrito</h1>
-  <p id="entorno"></p>
+  <p class="marca">@claudexplica</p>
+  <img class="mascota" src="mascota.webp" width="360" height="337" alt="">
 
-  <h2>Así quedaría</h2>
-  <ol>
-    <li><a class="boton principal" id="abrir" rel="noopener"><span class="letra">→</span><span class="texto"><b>Abrir en Claude</b><span>Copia el prompt y abre Claude</span></span></a></li>
-    <li><button class="boton" id="copiar" type="button"><span class="letra">⧉</span><span class="texto"><b>Solo copiar el prompt</b><span>Para pegarlo a mano en Claude</span></span></button></li>
-  </ol>
-  <p id="aviso" role="status"></p>
-  <p class="nota">¿Se ha abierto Claude sin el texto escrito? Ya lo tienes copiado: pega y envía.</p>
+  <h1 class="en-abriendo">Abriendo Claude…</h1>
+  <p class="sub en-abriendo">Con el mensaje ya escrito. Solo tienes que enviarlo.</p>
 
-  <details>
-  <summary>Botones de prueba, una vía cada uno (prueba 3)</summary>
-  <ol>
-    <li><a class="boton" id="a" rel="noopener"><span class="letra">A</span><span class="texto"><b>Abrir en Claude</b><span>Enlace normal a claude.ai</span></span></a></li>
-    <li><a class="boton" id="b"><span class="letra">B</span><span class="texto"><b>Abrir la app de Claude</b><span>Enlace propio de la app (claude://)</span></span></a></li>
-    <li class="android"><a class="boton" id="c"><span class="letra">C</span><span class="texto"><b>Abrir la app de Claude (Android)</b><span>Pide a Android que lo abra la app</span></span></a></li>
-    <li class="android"><a class="boton" id="d"><span class="letra">D</span><span class="texto"><b>Abrir en Chrome (Android)</b><span>Sale del navegador de Instagram</span></span></a></li>
-    <li class="ios"><a class="boton" id="e"><span class="letra">E</span><span class="texto"><b>Abrir en el navegador del iPhone</b><span>Sale del navegador de Instagram</span></span></a></li>
-    <li><button class="boton" id="f" type="button"><span class="letra">F</span><span class="texto"><b>Copiar el prompt</b><span>Para pegarlo a mano en Claude</span></span></button></li>
-  </ol>
-  </details>
+  <h1 class="en-boton">Haz vídeos con Claude, <em>sin salir en cámara.</em></h1>
+  <p class="sub en-boton">Se abre Claude con el mensaje ya escrito. Te pregunta el tema y te guía paso a paso.</p>
 
-  <h2>El prompt</h2>
-  <pre id="prompt"></pre>
+  <p class="pista" id="pista" hidden>Si Instagram te pregunta si quieres salir, dile que sí.</p>
+
+  <div class="acciones en-boton">
+    <a class="boton principal" id="abrir" href="https://claude.ai/new" rel="noopener">Abrir en Claude <span class="flecha" aria-hidden="true">→</span></a>
+    <button class="boton" id="copiar" type="button">Solo copiar el mensaje</button>
+    <p id="aviso" role="status"></p>
+    <p class="enlace" id="sinapp" hidden>¿No tienes la app de Claude? <a id="chrome" href="https://claude.ai/new">Ábrelo en Chrome</a>.</p>
+    <details id="ver">
+      <summary>Ver el mensaje</summary>
+      <pre id="mensaje"></pre>
+    </details>
+  </div>
+
+  <noscript>
+    <p class="sub" style="margin-top:18px">Abre <a href="https://claude.ai/new">claude.ai</a> y pídele la guía de vídeos de @claudexplica.</p>
+  </noscript>
 </main>
+<footer>Cuenta no oficial de Claude.</footer>
 
 <script>
-  var PROMPT = [
-    'Quiero crear algo con Claude. Lee esta guía de recetas, el texto completo:',
-    'https://raw.githubusercontent.com/alexelautentiko/claudexplica-prueba/main/v3/guia.md',
-    'Pregúntame cuál de sus recetas quiero y guíame paso a paso, un paso cada vez. Dime qué versión de la guía has leído.',
+(function () {
+  var MENSAJE = [
+    'Quiero hacer vídeos cortos para redes con Claude, sin salir en cámara. Lee esta guía, el texto completo:',
+    'https://raw.githubusercontent.com/alexelautentiko/claudexplica-prueba/main/v4/guia.md',
+    'Pregúntame de qué tema quiero el vídeo y guíame paso a paso, un paso cada vez. Dime qué versión de la guía has leído.',
     'Si no puedes abrirla, dímelo y no sigas.',
-    'Y recuerda esta guía para la próxima vez que quiera montar algo con Claude.'
+    'Y recuerda esta guía para la próxima vez que quiera hacer un vídeo con Claude.'
   ].join('\n');
 
   var ua = navigator.userAgent || '';
@@ -79,53 +123,71 @@
   var ios = /iPhone|iPad|iPod/i.test(ua);
   var instagram = /Instagram/i.test(ua);
   var facebook = /FBAN|FBAV/i.test(ua);
+  // Solo para revisar el diseño en el ordenador: ?ver=boton&dentro=instagram
+  if (window.cxVer && /[?&]dentro=instagram/.test(location.search)) { android = true; instagram = true; }
 
-  var q = encodeURIComponent(PROMPT);
+  var q = encodeURIComponent(MENSAJE);
   var web = 'https://claude.ai/new?q=' + q;
   var ruta = 'claude.ai/new?q=' + q;
   var reserva = encodeURIComponent(web);
+  var viaApp = 'intent://' + ruta + '#Intent;scheme=https;package=com.anthropic.claude;S.browser_fallback_url=' + reserva + ';end';
+  var viaChrome = 'intent://' + ruta + '#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + reserva + ';end';
+  var viaIphone = instagram ? 'instagram://extbrowser/?url=' + encodeURIComponent(web) : 'x-safari-https://' + ruta;
 
-  document.getElementById('prompt').textContent = PROMPT;
-  document.getElementById('entorno').textContent =
-    'Dónde estás: ' + (android ? 'Android' : ios ? 'iPhone o iPad' : 'ordenador') +
-    ' · ' + (instagram ? 'dentro de Instagram' : facebook ? 'dentro de Facebook' : 'navegador normal');
-
-  document.getElementById('a').href = web;
-  document.getElementById('b').href = 'claude://' + ruta;
-  document.getElementById('c').href = 'intent://' + ruta + '#Intent;scheme=https;package=com.anthropic.claude;S.browser_fallback_url=' + reserva + ';end';
-  document.getElementById('d').href = 'intent://' + ruta + '#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + reserva + ';end';
-  document.getElementById('e').href = instagram
-    ? 'instagram://extbrowser/?url=' + encodeURIComponent(web)
-    : 'x-safari-https://' + ruta;
-
-  // La vía principal según dónde se abre la página.
+  // La vía según el aparato: en Android, siempre la app; en iPhone dentro de Instagram, salir a su navegador.
   var principal = web;
-  if (android) principal = document.getElementById('c').href;
-  else if (ios && (instagram || facebook)) principal = document.getElementById('e').href;
+  if (android) principal = viaApp;
+  else if (ios && (instagram || facebook)) principal = viaIphone;
+
+  var raiz = document.documentElement;
+  var aviso = document.getElementById('aviso');
+  document.getElementById('mensaje').textContent = MENSAJE;
   document.getElementById('abrir').href = principal;
 
-  var i, nodos;
-  if (!android) { nodos = document.querySelectorAll('.android'); for (i = 0; i < nodos.length; i++) nodos[i].className += ' oculto'; }
-  if (!ios) { nodos = document.querySelectorAll('.ios'); for (i = 0; i < nodos.length; i++) nodos[i].className += ' oculto'; }
+  if (instagram || facebook) {
+    var pista = document.getElementById('pista');
+    if (facebook && !instagram) pista.textContent = 'Si Facebook te pregunta si quieres salir, dile que sí.';
+    pista.hidden = false;
+  }
+  if (android && (instagram || facebook)) {
+    document.getElementById('chrome').href = viaChrome;
+    document.getElementById('sinapp').hidden = false;
+  }
 
-  function avisar(t) { document.getElementById('aviso').textContent = t; }
   function copiarAntiguo() {
     var ta = document.createElement('textarea');
-    ta.value = PROMPT; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    ta.value = MENSAJE; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
     document.body.appendChild(ta); ta.select();
     var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
     document.body.removeChild(ta);
-    avisar(ok ? 'Copiado. Ábrelo en Claude y pega.' : 'No se ha podido copiar: mantén pulsado el texto de abajo.');
+    return ok;
   }
-  function copiar() {
+  function copiar(bien) {
+    function mal() {
+      if (copiarAntiguo()) { aviso.textContent = bien; return; }
+      aviso.textContent = 'No se ha podido copiar. Cópialo a mano de aquí abajo.';
+      document.getElementById('ver').open = true;
+    }
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(PROMPT).then(function () { avisar('Copiado. Ábrelo en Claude y pega.'); }, copiarAntiguo);
-    } else { copiarAntiguo(); }
+      navigator.clipboard.writeText(MENSAJE).then(function () { aviso.textContent = bien; }, mal);
+    } else { mal(); }
   }
-  document.getElementById('f').addEventListener('click', copiar);
-  document.getElementById('copiar').addEventListener('click', copiar);
-  // «Abrir en Claude» copia primero (sin esperar) y deja que el enlace siga su camino.
-  document.getElementById('abrir').addEventListener('click', function () { copiarAntiguo(); copiar(); });
+  document.getElementById('copiar').addEventListener('click', function () {
+    copiar('Copiado. Pégalo en Claude y envíalo.');
+  });
+  // El botón principal copia primero, sin esperar, y deja que el enlace siga su camino.
+  document.getElementById('abrir').addEventListener('click', function () {
+    copiarAntiguo();
+    copiar('Mensaje copiado. Si Claude se abre vacío, pégalo y envíalo.');
+  });
+
+  // El salto automático: una vez por visita, para que «atrás» no lo repita.
+  if (window.cxSalta) {
+    try { sessionStorage.setItem('salto', '1'); } catch (e) {}
+    setTimeout(function () { raiz.className = ''; }, 1500);
+    if (!android && !ios) location.replace(web); else location.href = principal;
+  }
+})();
 </script>
 </body>
 </html>
