@@ -1,8 +1,8 @@
-# Vídeos con Claude, sin salir en cámara
+# El sistema para crear vídeos faceless con Claude
 
-Guía de @claudexplica. Versión de prueba D1, del 19 de noviembre de 2026.
+Guía de @claudexplica. Versión D2, del 19 de noviembre de 2026.
 
-Esta guía explica cómo hacer vídeos cortos para TikTok, Instagram y YouTube desde un chat de Claude, sin grabarse. Claude escribe el guion y Revid, la herramienta de vídeo, pone la voz, las imágenes, los subtítulos y la música. Los pasos de generar y de publicar están tomados de la documentación de Revid y todavía no los ha probado el canal.
+Este es el sistema de @claudexplica para crear vídeos faceless: vídeos cortos para TikTok, Instagram y YouTube, hechos desde un chat de Claude y sin salir en cámara. Claude encuentra qué funciona en tu tema y escribe el guion. Revid, la herramienta de vídeo, pone la voz, las imágenes, los subtítulos y la música, y lo publica. Son cinco recetas, de la idea al vídeo publicado.
 
 ## Qué hace falta
 
