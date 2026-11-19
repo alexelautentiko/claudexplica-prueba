@@ -112,7 +112,7 @@
     <a class="boton principal" id="abrir" href="https://claude.ai/new" rel="noopener">Abrir en Claude <span class="flecha" aria-hidden="true">→</span></a>
     <button class="boton" id="copiar" type="button">Copiar el prompt</button>
     <p id="aviso" role="status"></p>
-    <p class="enlace" id="sinapp" hidden>¿No tienes la app de Claude? <a id="chrome" href="https://claude.ai/new">Ábrelo en Chrome</a>.</p>
+    <p class="enlace" id="sinapp" hidden>¿No se ha abierto? <a id="chrome" href="https://claude.ai/new">Ábrelo en Chrome</a>.</p>
     <details id="ver">
       <summary>Ver el mensaje</summary>
       <pre id="mensaje"></pre>
@@ -183,13 +183,14 @@
   var web = 'https://claude.ai/new?q=' + q;
   var ruta = 'claude.ai/new?q=' + q;
   var reserva = encodeURIComponent(web);
-  var viaApp = 'intent://' + ruta + '#Intent;scheme=https;package=com.anthropic.claude;S.browser_fallback_url=' + reserva + ';end';
+  // Sin nombrar aplicación: decide Android. Con la app de Claude instalada, la abre; sin ella, el navegador del teléfono.
+  var viaSistema = 'intent://' + ruta + '#Intent;scheme=https;S.browser_fallback_url=' + reserva + ';end';
   var viaChrome = 'intent://' + ruta + '#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + reserva + ';end';
   var viaIphone = instagram ? 'instagram://extbrowser/?url=' + encodeURIComponent(web) : 'x-safari-https://' + ruta;
 
-  // La vía según el aparato: en Android, siempre la app; en iPhone dentro de Instagram, salir a su navegador.
+  // La vía según el aparato: en Android, la que elija el sistema; en iPhone dentro de Instagram, salir a su navegador.
   var principal = web;
-  if (android) principal = viaApp;
+  if (android) principal = viaSistema;
   else if (ios && (instagram || facebook)) principal = viaIphone;
 
   var raiz = document.documentElement;
@@ -202,9 +203,20 @@
     if (facebook && !instagram) pista.textContent = 'Si Facebook te pregunta si quieres salir, dile que sí.';
     pista.hidden = false;
   }
-  if (android && (instagram || facebook)) {
+  // La red: al entrar no se ve. Sale solo si, tras pulsar el botón, la página sigue en pantalla (el salto no ha hecho nada).
+  if (android) {
     document.getElementById('chrome').href = viaChrome;
-    document.getElementById('sinapp').hidden = false;
+    var fuera = false;
+    var salio = function () { fuera = true; };
+    document.addEventListener('visibilitychange', function () { if (document.hidden) salio(); });
+    window.addEventListener('pagehide', salio);
+    window.addEventListener('blur', salio);
+    document.getElementById('abrir').addEventListener('click', function () {
+      fuera = false;
+      setTimeout(function () {
+        if (!fuera && !document.hidden) document.getElementById('sinapp').hidden = false;
+      }, 1800);
+    });
   }
 
   function copiarAntiguo() {
