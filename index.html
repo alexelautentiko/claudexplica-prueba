@@ -29,6 +29,8 @@
   .oculto { display: none; }
   pre { white-space: pre-wrap; word-break: break-word; background: #fff; border: 1px solid var(--linea); border-radius: 12px;
        padding: 12px; font: 13px/1.5 "JetBrains Mono", ui-monospace, Consolas, monospace; margin: 0; }
+  details { margin-top: 28px; }
+  summary { cursor: pointer; font-weight: 700; color: var(--suave); }
   .nota { font-size: 14px; color: var(--suave); }
   #aviso { min-height: 22px; font-weight: 700; color: var(--naranja); margin-top: 10px; }
 </style>
@@ -47,7 +49,8 @@
   <p id="aviso" role="status"></p>
   <p class="nota">¿Se ha abierto Claude sin el texto escrito? Ya lo tienes copiado: pega y envía.</p>
 
-  <h2>Las vías, una a una (prueba 2)</h2>
+  <details>
+  <summary>Botones de prueba, una vía cada uno (prueba 3)</summary>
   <ol>
     <li><a class="boton" id="a" rel="noopener"><span class="letra">A</span><span class="texto"><b>Abrir en Claude</b><span>Enlace normal a claude.ai</span></span></a></li>
     <li><a class="boton" id="b"><span class="letra">B</span><span class="texto"><b>Abrir la app de Claude</b><span>Enlace propio de la app (claude://)</span></span></a></li>
@@ -56,6 +59,7 @@
     <li class="ios"><a class="boton" id="e"><span class="letra">E</span><span class="texto"><b>Abrir en el navegador del iPhone</b><span>Sale del navegador de Instagram</span></span></a></li>
     <li><button class="boton" id="f" type="button"><span class="letra">F</span><span class="texto"><b>Copiar el prompt</b><span>Para pegarlo a mano en Claude</span></span></button></li>
   </ol>
+  </details>
 
   <h2>El prompt</h2>
   <pre id="prompt"></pre>
@@ -96,7 +100,7 @@
 
   // La vía principal según dónde se abre la página.
   var principal = web;
-  if (android && (instagram || facebook)) principal = document.getElementById('c').href;
+  if (android) principal = document.getElementById('c').href;
   else if (ios && (instagram || facebook)) principal = document.getElementById('e').href;
   document.getElementById('abrir').href = principal;
 
