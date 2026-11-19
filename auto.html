@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>claudexplica · abrir Claude</title>
+<style>
+  :root { --papel: #FFF4E6; --tinta: #15110D; --naranja: #E8590C; --linea: #E6D5BF; --suave: #6B5E50; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--papel); color: var(--tinta);
+         font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.45; }
+  main { max-width: 560px; margin: 0 auto; padding: 28px 16px 56px; }
+  .tag { font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--naranja); font-weight: 700; margin: 0 0 8px; }
+  h1 { font-size: 28px; line-height: 1.15; margin: 0 0 10px; }
+  h2 { font-size: 15px; margin: 32px 0 8px; color: var(--suave); }
+  p { margin: 0 0 12px; }
+  ol { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 12px; }
+  a.boton, button.boton { display: flex; gap: 12px; align-items: center; width: 100%; min-height: 60px; padding: 12px 14px;
+       border-radius: 14px; border: 2px solid var(--tinta); background: #fff; color: var(--tinta);
+       text-decoration: none; font: inherit; text-align: left; cursor: pointer; }
+  a.boton.principal { background: var(--naranja); border-color: var(--naranja); color: #fff; }
+  .letra { flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
+       font-weight: 800; background: var(--tinta); color: var(--papel); }
+  .principal .letra { background: #fff; color: var(--naranja); }
+  .texto b { display: block; font-size: 16px; }
+  .texto span { display: block; font-size: 13px; opacity: .8; }
+  .oculto { display: none; }
+  .nota { font-size: 14px; color: var(--suave); }
+  .nota a { color: var(--tinta); font-weight: 700; }
+  #aviso { min-height: 22px; font-weight: 700; color: var(--naranja); margin-top: 10px; }
+  #diario { margin: 0; padding: 10px 12px 10px 28px; background: #fff; border: 1px solid var(--linea); border-radius: 12px;
+       font: 13px/1.6 "JetBrains Mono", ui-monospace, Consolas, monospace; }
+</style>
+</head>
+<body>
+<main>
+  <p class="tag">Página de prueba 4 · cuenta no oficial</p>
+  <h1 id="titulo">Abriendo Claude…</h1>
+  <p id="sub">Con el mensaje ya escrito. Solo tienes que enviarlo.</p>
+
+  <div id="botones" class="oculto">
+    <ol>
+      <li><a class="boton principal" id="abrir" rel="noopener"><span class="letra">→</span><span class="texto"><b>Abrir en Claude</b><span>Copia el mensaje y abre Claude</span></span></a></li>
+      <li><button class="boton" id="copiar" type="button"><span class="letra">⧉</span><span class="texto"><b>Solo copiar el mensaje</b><span>Para pegarlo a mano en Claude</span></span></button></li>
+    </ol>
+    <p id="aviso" role="status"></p>
+    <p class="nota oculto" id="sinapp">¿No tienes la app de Claude? <a id="chrome">Ábrelo en Chrome</a>.</p>
+  </div>
+
+  <h2>Qué ha pasado (para la prueba)</h2>
+  <ul id="diario"></ul>
+  <p class="nota" style="margin-top:10px"><a id="otra" href="#">Probar otra vez el salto automático</a></p>
+</main>
+
+<script>
+  var PROMPT = [
+    'Quiero crear algo con Claude. Lee esta guía de recetas, el texto completo:',
+    'https://raw.githubusercontent.com/alexelautentiko/claudexplica-prueba/main/v3/guia.md',
+    'Pregúntame cuál de sus recetas quiero y guíame paso a paso, un paso cada vez. Dime qué versión de la guía has leído.',
+    'Si no puedes abrirla, dímelo y no sigas.',
+    'Y recuerda esta guía para la próxima vez que quiera montar algo con Claude.'
+  ].join('\n');
+
+  var ua = navigator.userAgent || '';
+  var android = /Android/i.test(ua);
+  var ios = /iPhone|iPad|iPod/i.test(ua);
+  var instagram = /Instagram/i.test(ua);
+  var facebook = /FBAN|FBAV/i.test(ua);
+
+  var q = encodeURIComponent(PROMPT);
+  var web = 'https://claude.ai/new?q=' + q;
+  var ruta = 'claude.ai/new?q=' + q;
+  var reserva = encodeURIComponent(web);
+  var viaApp = 'intent://' + ruta + '#Intent;scheme=https;package=com.anthropic.claude;S.browser_fallback_url=' + reserva + ';end';
+  var viaChrome = 'intent://' + ruta + '#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + reserva + ';end';
+  var viaIphone = instagram ? 'instagram://extbrowser/?url=' + encodeURIComponent(web) : 'x-safari-https://' + ruta;
+
+  // La misma vía que el botón principal de la página con botones.
+  var principal = web, nombreVia = 'enlace normal a claude.ai';
+  if (android) { principal = viaApp; nombreVia = 'la app de Claude (Android)'; }
+  else if (ios && (instagram || facebook)) { principal = viaIphone; nombreVia = 'salir del navegador de Instagram (iPhone)'; }
+
+  function apuntar(t) {
+    var li = document.createElement('li'); li.textContent = t;
+    document.getElementById('diario').appendChild(li);
+  }
+  function avisar(t) { document.getElementById('aviso').textContent = t; }
+
+  apuntar('Dónde: ' + (android ? 'Android' : ios ? 'iPhone o iPad' : 'ordenador') +
+          ' · ' + (instagram ? 'dentro de Instagram' : facebook ? 'dentro de Facebook' : 'navegador normal'));
+
+  document.getElementById('abrir').href = principal;
+  document.getElementById('chrome').href = viaChrome;
+  if (android) document.getElementById('sinapp').className = 'nota';
+
+  function mostrarBotones() {
+    document.getElementById('titulo').textContent = '¿No se ha abierto Claude?';
+    document.getElementById('sub').textContent = 'Pulsa el botón: copia el mensaje y abre Claude.';
+    document.getElementById('botones').className = '';
+  }
+
+  // Copiar con un toque (los botones).
+  function copiarAntiguo() {
+    var ta = document.createElement('textarea');
+    ta.value = PROMPT; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    avisar(ok ? 'Copiado. Ábrelo en Claude y pega.' : 'No se ha podido copiar.');
+  }
+  function copiar() {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(PROMPT).then(function () { avisar('Copiado. Ábrelo en Claude y pega.'); }, copiarAntiguo);
+    } else { copiarAntiguo(); }
+  }
+  document.getElementById('copiar').addEventListener('click', copiar);
+  document.getElementById('abrir').addEventListener('click', function () { copiarAntiguo(); copiar(); });
+
+  // El salto automático: una sola vez por visita, para que «atrás» no lo repita en bucle.
+  var yaProbado = false;
+  try { yaProbado = sessionStorage.getItem('salto') === '1'; } catch (e) {}
+
+  document.getElementById('otra').addEventListener('click', function (ev) {
+    ev.preventDefault();
+    try { sessionStorage.removeItem('salto'); } catch (e) {}
+    location.reload();
+  });
+
+  var lanzado = false;
+  function saltar() {
+    if (lanzado) return; lanzado = true;
+    try { sessionStorage.setItem('salto', '1'); } catch (e) {}
+    apuntar('Salto automático: intentado, por ' + nombreVia);
+    setTimeout(function () {
+      apuntar('Un segundo y medio después la página sigue aquí: se enseñan los botones');
+      mostrarBotones();
+    }, 1500);
+    if (!android && !ios) location.replace(web); else location.href = principal;
+  }
+
+  if (yaProbado) {
+    apuntar('Salto automático: ya se intentó en esta visita; no se repite');
+    mostrarBotones();
+  } else {
+    // Sin toque, casi ningún navegador deja copiar. Se intenta y se apunta el resultado.
+    var copia;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      copia = navigator.clipboard.writeText(PROMPT).then(
+        function () { apuntar('Copia sin toque: sí'); },
+        function () { apuntar('Copia sin toque: no (el navegador pide un toque)'); });
+    } else {
+      apuntar('Copia sin toque: no disponible en este navegador');
+      copia = { then: function (f) { f(); } };
+    }
+    copia.then(saltar, saltar);
+    setTimeout(saltar, 700);
+  }
+</script>
+</body>
+</html>
