@@ -1,0 +1,12 @@
+La mascota en 3D de la página (19-nov-2026)
+
+enchufe.glb          El modelo, aligerado para web (malla comprimida con meshopt, textura de 1024 px en WebP).
+mascota3d.js         Lo que carga la página: three.js r170 + el lector de GLB + el descompresor + el código de la escena, en un solo archivo.
+mascota3d.fuente.js  El código de la escena, legible. Es de donde sale mascota3d.js.
+LICENCIAS.txt        Licencias de three.js y de meshoptimizer (MIT).
+
+Para rehacer mascota3d.js después de tocar la fuente (en una carpeta con «npm install three@0.170.0 esbuild»):
+  esbuild mascota3d.fuente.js --bundle --format=esm --minify --target=es2020 --legal-comments=none --outfile=mascota3d.js
+
+Si este archivo, el modelo o WebGL fallan, la página enseña la imagen mascota.webp y todo lo demás funciona igual.
+Para verla sin 3D: añadir ?sin3d (o &sin3d) a la dirección.
