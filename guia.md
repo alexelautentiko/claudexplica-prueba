@@ -1,32 +1,53 @@
 # El sistema para crear vídeos faceless con Claude
 
-Guía de @claudexplica. Versión D2, del 19 de noviembre de 2026.
+Guía de @claudexplica. Versión D5, del 19 de noviembre de 2026.
 
-Este es el sistema de @claudexplica para crear vídeos faceless: vídeos cortos para TikTok, Instagram y YouTube, hechos desde un chat de Claude y sin salir en cámara. Claude encuentra qué funciona en tu tema y escribe el guion. Revid, la herramienta de vídeo, pone la voz, las imágenes, los subtítulos y la música, y lo publica. Son cinco recetas, de la idea al vídeo publicado.
+Este es el sistema de @claudexplica para crear vídeos faceless: vídeos cortos para TikTok, Instagram y YouTube, hechos desde un chat de Claude y sin salir en cámara. Claude encuentra qué funciona en tu tema y escribe el guion. Revid, la herramienta de vídeo, pone la voz, las imágenes, los subtítulos y la música, y lo publica.
 
-## Qué hace falta
+Son tres pasos:
+
+1. Crear la cuenta gratis de Revid y conectarla a Claude. Una sola vez.
+2. Ver qué vídeos funcionan en tu tema y cuánto costará el tuyo. Gratis (receta 1).
+3. Generar el vídeo y publicarlo. Aquí hace falta un plan de Revid (recetas 2 a 5).
+
+## Lo primero: la cuenta gratis de Revid
+
+Todo empieza por crear la cuenta de Revid desde este enlace: https://www.revid.ai/?via=aferncult
+
+Es gratis y no pide tarjeta. Con ella, Claude ya puede buscar qué vídeos funcionan en un tema (20 búsquedas al día) y calcular cuánto costará un vídeo antes de hacerlo. El conector de Claude se enlaza después con esta misma cuenta, así que va antes que todo lo demás.
+
+## Qué más hace falta
 
 - Una cuenta de Claude. Sirve la gratuita, que admite un solo conector personalizado: si ya hay otro puesto, hay que quitarlo antes de añadir Revid.
-- Una cuenta de Revid. Crearla es gratis y no pide tarjeta. Con la cuenta gratis, Claude ya puede buscar qué vídeos funcionan en un tema (20 búsquedas al día) y calcular cuánto costará un vídeo antes de hacerlo.
-- Para generar el vídeo hace falta un plan de Revid. El plan Growth cuesta 39 dólares al mes y trae 2.000 créditos. Con el código CLAUDEXPLICA, el primer mes sale un 20 % más barato. Se escribe al pagar.
+- Para generar el vídeo, un plan de Revid. El plan Growth cuesta 39 dólares al mes y trae 2.000 créditos. Con el código CLAUDEXPLICA, el primer mes sale un 20 % más barato. Se escribe al pagar.
 
-## Preparación, una sola vez
+## Conectar Revid a Claude, una sola vez
 
-1. Crear la cuenta de Revid desde este enlace: https://www.revid.ai/?via=aferncult
-2. Conectar Revid a Claude. En Claude: Ajustes, Conectores, «Añadir conector personalizado». Se pega esta dirección: https://www.revid.ai/api/mcp. Después, Conectar, iniciar sesión con la cuenta de Revid y aprobar el acceso.
+Con la cuenta de Revid ya creada:
+
+1. Abrir los conectores de Claude: https://claude.ai/customize/connectors (en el menú de Claude, «Customize» y «Connectors»). Se hace en claude.ai desde un navegador o en la app del ordenador; una vez puesto, el conector sirve también en la app del móvil.
+2. Pulsar «Add» y «Add custom connector». Nombre: Revid. En la casilla de la dirección se pega esto, tal cual: `https://www.revid.ai/api/mcp`. Es una dirección para Claude: abierta en el navegador solo da un error.
+3. Seguir hasta «Add». Se abre Revid para iniciar sesión: se entra con la cuenta recién creada y se aprueba el acceso.
+4. De vuelta en el chat, mirar que Revid está activado: botón «+» y «Connectors». Si Claude sigue sin verlo, se abre una conversación nueva.
+
+La primera vez que Claude usa Revid pide permiso: se acepta.
 
 ## Receta 1. Ver qué funciona en tu tema (gratis)
 
 Se le pide a Claude, por ejemplo: «Busca con Revid los vídeos más virales sobre datos curiosos en español y resume cómo empiezan».
 
-Claude devuelve los vídeos con sus vistas, su texto completo y su primera frase. Sirve para elegir el tema y el arranque antes de gastar nada.
+Claude devuelve los vídeos con sus vistas, su texto completo y su primera frase. Sirve para elegir el tema y la primera frase antes de gastar nada.
 
 ## Receta 2. Un vídeo desde una idea
 
-1. Se le da a Claude el tema y la duración. Por ejemplo: «Haz un vídeo vertical de 30 segundos con tres datos curiosos sobre el océano, con voz en español y subtítulos».
-2. Antes de generar, se le pide el precio en créditos. Calculado el 19 de noviembre de 2026: un vídeo de 30 segundos cuesta 37 créditos con imágenes en movimiento y 341 con vídeo generado por IA. Con 2.000 créditos al mes salen unos 50 vídeos del primer tipo o unos 5 del segundo.
-3. Si no hay plan, este es el momento de elegirlo en Revid. Al pagar, se escribe el código CLAUDEXPLICA.
+1. Se le da a Claude el tema y la duración. Por ejemplo: «Haz un vídeo vertical de 30 segundos con tres datos curiosos sobre el océano, con una voz nativa de España y subtítulos». La voz se pide por su acento («de España», «mexicana»): las que salen por defecto hablan español con acento inglés.
+2. Antes de generar, se le pide el precio en créditos. Calcularlo es gratis y depende de cómo se hagan las imágenes. Para 30 segundos, en noviembre de 2026:
+   - Con vídeos de archivo: unos 33 créditos. Con el plan Growth, unos 60 vídeos al mes.
+   - Con imágenes en movimiento: 37 créditos, o 59 con música hecha a medida. De 33 a 54 vídeos al mes.
+   - Con vídeo generado por IA: unos 360 créditos. Unos 5 vídeos al mes.
+3. Si no hay plan, este es el momento de elegirlo en Revid. Al pagar, se escribe el código CLAUDEXPLICA: un 20 % menos el primer mes.
 4. Claude lanza el vídeo y avisa cuando está listo, con el enlace para verlo.
+5. Si algo no convence (una frase, una imagen, la voz), se le pide el cambio: Claude lo corrige sobre el mismo vídeo, sin hacerlo de nuevo.
 
 ## Receta 3. Un vídeo desde un artículo o un enlace
 
@@ -39,3 +60,9 @@ Se le dan a Claude las fotos del producto o su página y lo que tiene que contar
 ## Receta 5. Publicarlo o programarlo
 
 Las cuentas de TikTok, YouTube e Instagram se conectan en los ajustes de Revid. Después se le pide a Claude, por ejemplo: «Publica el último vídeo en mi TikTok el viernes a las 18:00».
+
+## Si algo no sale
+
+- Claude dice que no tiene Revid: se activa en el botón «+», «Connectors», o se abre una conversación nueva.
+- Claude no deja añadir el conector: con Claude gratis solo cabe uno personalizado. Se quita el que haya.
+- Al generar avisa de que hace falta un plan: buscar y calcular el precio van con la cuenta gratis; generar pide un plan activo, aunque queden créditos. Al pagarlo, el código CLAUDEXPLICA.

@@ -1,30 +1,34 @@
 # El sistema para crear vídeos faceless con Claude
 
-Guía de @claudexplica. Versión D4, del 19 de noviembre de 2026.
+Guía de @claudexplica. Versión D5, del 19 de noviembre de 2026.
 
 Este es el sistema de @claudexplica para crear vídeos faceless: vídeos cortos para TikTok, Instagram y YouTube, hechos desde un chat de Claude y sin salir en cámara. Claude encuentra qué funciona en tu tema y escribe el guion. Revid, la herramienta de vídeo, pone la voz, las imágenes, los subtítulos y la música, y lo publica.
 
 Son tres pasos:
 
-1. Conectar Revid a Claude. Gratis, una sola vez.
+1. Crear la cuenta gratis de Revid y conectarla a Claude. Una sola vez.
 2. Ver qué vídeos funcionan en tu tema y cuánto costará el tuyo. Gratis (receta 1).
 3. Generar el vídeo y publicarlo. Aquí hace falta un plan de Revid (recetas 2 a 5).
 
-## Qué hace falta
+## Lo primero: la cuenta gratis de Revid
+
+Todo empieza por crear la cuenta de Revid desde este enlace: https://www.revid.ai/?via=aferncult
+
+Es gratis y no pide tarjeta. Con ella, Claude ya puede buscar qué vídeos funcionan en un tema (20 búsquedas al día) y calcular cuánto costará un vídeo antes de hacerlo. El conector de Claude se enlaza después con esta misma cuenta, así que va antes que todo lo demás.
+
+## Qué más hace falta
 
 - Una cuenta de Claude. Sirve la gratuita, que admite un solo conector personalizado: si ya hay otro puesto, hay que quitarlo antes de añadir Revid.
-- Una cuenta de Revid. Crearla es gratis y no pide tarjeta.
 - Para generar el vídeo, un plan de Revid. El plan Growth cuesta 39 dólares al mes y trae 2.000 créditos. Con el código CLAUDEXPLICA, el primer mes sale un 20 % más barato. Se escribe al pagar.
 
-## Preparación, una sola vez
+## Conectar Revid a Claude, una sola vez
 
-Por este orden: primero la cuenta y después el conector.
+Con la cuenta de Revid ya creada:
 
-1. Crear la cuenta de Revid desde este enlace: https://www.revid.ai/?via=aferncult
-2. Abrir los conectores de Claude: https://claude.ai/customize/connectors (en el menú de Claude, «Customize» y «Connectors»). Se hace en claude.ai desde un navegador o en la app del ordenador; una vez puesto, el conector sirve también en la app del móvil.
-3. Pulsar «Add» y «Add custom connector». Nombre: Revid. En la casilla de la dirección se pega esto, tal cual: `https://www.revid.ai/api/mcp`. Es una dirección para Claude: abierta en el navegador solo da un error.
-4. Seguir hasta «Add». Se abre Revid para iniciar sesión: se entra con la cuenta del punto 1 y se aprueba el acceso.
-5. De vuelta en el chat, mirar que Revid está activado: botón «+» y «Connectors». Si Claude sigue sin verlo, se abre una conversación nueva.
+1. Abrir los conectores de Claude: https://claude.ai/customize/connectors (en el menú de Claude, «Customize» y «Connectors»). Se hace en claude.ai desde un navegador o en la app del ordenador; una vez puesto, el conector sirve también en la app del móvil.
+2. Pulsar «Add» y «Add custom connector». Nombre: Revid. En la casilla de la dirección se pega esto, tal cual: `https://www.revid.ai/api/mcp`. Es una dirección para Claude: abierta en el navegador solo da un error.
+3. Seguir hasta «Add». Se abre Revid para iniciar sesión: se entra con la cuenta recién creada y se aprueba el acceso.
+4. De vuelta en el chat, mirar que Revid está activado: botón «+» y «Connectors». Si Claude sigue sin verlo, se abre una conversación nueva.
 
 La primera vez que Claude usa Revid pide permiso: se acepta.
 
@@ -32,7 +36,7 @@ La primera vez que Claude usa Revid pide permiso: se acepta.
 
 Se le pide a Claude, por ejemplo: «Busca con Revid los vídeos más virales sobre datos curiosos en español y resume cómo empiezan».
 
-Claude devuelve los vídeos con sus vistas, su texto completo y su primera frase. Sirve para elegir el tema y la primera frase antes de gastar nada. Con la cuenta gratis de Revid son 20 búsquedas al día.
+Claude devuelve los vídeos con sus vistas, su texto completo y su primera frase. Sirve para elegir el tema y la primera frase antes de gastar nada.
 
 ## Receta 2. Un vídeo desde una idea
 
