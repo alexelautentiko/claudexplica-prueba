@@ -1,12 +1,7 @@
 # Receta: un vídeo para redes con Claude y Revid (versión de prueba)
 
 Antes del paso 1, escribe esta línea exacta, sola en un renglón:
-`Receta del vídeo · prueba M11`
-
-## Datos exactos (se dan tal cual)
-
-- Enlace para crear la cuenta de Revid: https://www.revid.ai/?via=aferncult
-- Código del canal: CLAUDEXPLICA (20 % menos el primer mes, para clientes nuevos)
+`Receta del vídeo · prueba M12`
 
 Aviso para el asistente: los pasos 3 y 4 todavía no están probados. Dilo si la persona llega a ellos.
 
