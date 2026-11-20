@@ -6,15 +6,16 @@ Este es el sistema de @claudexplica para crear vídeos cortos para TikTok, Insta
 
 ## Lo primero: qué vídeo quieres
 
-Hay tres caminos. Se elige uno antes de empezar:
+Hay cuatro caminos. Se elige uno antes de empezar:
 
 - **A. Un vídeo sin salir en cámara.** No hace falta tener nada grabado: Claude encuentra qué funciona en tu tema y escribe el guion, y Revid pone la voz, las imágenes, los subtítulos y la música. Para datos curiosos, historias o explicaciones. Es la parte A.
 - **B. Editar un vídeo que ya has grabado.** Subtítulos, cortes, música e imágenes de apoyo, o cortos sacados de un vídeo largo de YouTube. Lo hace Submagic. Es la parte B.
 - **C. Escenas generadas con IA.** Un clip de cine, un anuncio de producto o un personaje que no existe, desde una descripción o una foto. Lo hace Higgsfield. Es la parte C.
+- **D. Un vídeo con presentador.** Alguien que habla a cámara con tu guion, sin que tengas que grabarte: uno de sus presentadores o un avatar tuyo. Lo hace HeyGen. Es la parte D.
 
-Las tres partes están enteras más abajo, en esta misma página.
+Las cuatro partes están enteras más abajo, en esta misma página.
 
-Todas necesitan una cuenta de Claude. Sirve la gratuita, que admite un solo conector personalizado: si ya hay otro puesto, hay que quitarlo antes de añadir el nuevo.
+Todas necesitan una cuenta de Claude. Para las partes A, B y C sirve la gratuita, que admite un solo conector personalizado: si ya hay otro puesto, hay que quitarlo antes de añadir el nuevo. La parte D, según HeyGen, pide un plan de pago de Claude.
 
 ---
 
@@ -179,6 +180,46 @@ Se le dan a Claude las fotos del producto o su página: «Con Higgsfield, hazme 
 
 ---
 
+## Parte D. Un vídeo con presentador, con HeyGen
+
+Son tres pasos:
+
+1. Crear la cuenta de HeyGen y conectarla a Claude. Una sola vez.
+2. Darle a Claude el tema o el guion (receta 12).
+3. Si quieres que el presentador seas tú, crear tu avatar en HeyGen (receta 13).
+
+### Lo primero: la cuenta de HeyGen
+
+Se crea en https://www.heygen.com. Es gratis: 3 vídeos al mes de hasta 1 minuto, con marca de agua, con más de 500 presentadores ya hechos y un avatar propio.
+
+### Qué más hace falta
+
+- Un plan de pago de Claude: HeyGen lo pide para usarlo desde Claude, y recomienda su plan Creator o uno mayor.
+- Planes de HeyGen, el 20 de noviembre de 2026: Creator, 29 dólares al mes, con 600 créditos, sin marca de agua, en 1080p, vídeos de hasta 30 minutos y tu avatar con tu propia voz. Pro, 49 dólares al mes, con 1.000 créditos y 4K. Con pago anual, dos meses gratis.
+
+### Conectar HeyGen a Claude, una sola vez
+
+Con la cuenta de HeyGen ya creada:
+
+1. Abrir este enlace, que deja el conector ya rellenado: https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=HeyGen&connectorUrl=https%3A%2F%2Fmcp.heygen.com%2Fmcp%2Fv1%2F
+   Si no se rellena solo: en los conectores de Claude (https://claude.ai/customize/connectors), «Add» y «Add custom connector». Nombre: HeyGen. Dirección: `https://mcp.heygen.com/mcp/v1/`.
+2. Seguir hasta «Add», pulsar «Connect» y aprobar el acceso en HeyGen.
+3. De vuelta en el chat, mirar que HeyGen está activado (botón «+» y «Connectors») y preguntar: «¿Cuántos créditos me quedan en HeyGen?».
+
+### Receta 12. Un vídeo con presentador, desde un tema o un guion
+
+1. Se le pide a Claude, por ejemplo: «Con HeyGen, haz un vídeo vertical de 30 segundos con un presentador que explique por qué el café quita el sueño, en español de España. Enséñame antes los presentadores y las voces».
+2. Claude escribe el guion, o usa el tuyo palabra por palabra si se lo das, y genera el vídeo con el presentador y la voz elegidos.
+3. Claude avisa cuando está listo, con el enlace para verlo. El vídeo queda también en «Projects», en HeyGen.
+
+### Receta 13. Que el presentador seas tú
+
+Tu avatar se crea una vez en la app de HeyGen: se graba un vídeo corto hablando a cámara y se da el permiso para usar tu imagen. La cuenta gratis permite uno; con tu propia voz, desde el plan Creator.
+
+Después se le pide a Claude: «Con HeyGen, haz este vídeo con mi avatar: (guion)». A partir de ahí, cada vídeo sale sin volver a grabarte.
+
+---
+
 ## Si algo no sale
 
 - Claude dice que no tiene el conector: se activa en el botón «+», «Connectors», o se abre una conversación nueva.
@@ -187,3 +228,4 @@ Se le dan a Claude las fotos del producto o su página: «Con Higgsfield, hazme 
 - Submagic dice que no hay créditos: se le pregunta a Claude cuántos quedan. Cada vídeo necesita todos sus créditos; si no llegan, no se cobra nada.
 - El enlace de subida ha caducado o rechaza el vídeo: se le pide otro a Claude, o un vídeo más corto.
 - Higgsfield no genera por falta de créditos: se le pregunta a Claude el saldo. Desde Claude solo valen los créditos del plan o la prueba gratis.
+- HeyGen no se deja conectar o no responde: según HeyGen, desde Claude hace falta un plan de pago de Claude.
