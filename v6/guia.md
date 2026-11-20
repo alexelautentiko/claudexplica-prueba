@@ -6,14 +6,15 @@ Este es el sistema de @claudexplica para crear vídeos cortos para TikTok, Insta
 
 ## Lo primero: qué vídeo quieres
 
-Hay dos caminos. Se elige uno antes de empezar:
+Hay tres caminos. Se elige uno antes de empezar:
 
-- **A. Un vídeo sin salir en cámara.** No hace falta tener nada grabado: Claude encuentra qué funciona en tu tema y escribe el guion, y Revid pone la voz, las imágenes, los subtítulos y la música. Es la parte A.
+- **A. Un vídeo sin salir en cámara.** No hace falta tener nada grabado: Claude encuentra qué funciona en tu tema y escribe el guion, y Revid pone la voz, las imágenes, los subtítulos y la música. Para datos curiosos, historias o explicaciones. Es la parte A.
 - **B. Editar un vídeo que ya has grabado.** Subtítulos, cortes, música e imágenes de apoyo, o cortos sacados de un vídeo largo de YouTube. Lo hace Submagic. Es la parte B.
+- **C. Escenas generadas con IA.** Un clip de cine, un anuncio de producto o un personaje que no existe, desde una descripción o una foto. Lo hace Higgsfield. Es la parte C.
 
-Las dos partes están enteras más abajo, en esta misma página.
+Las tres partes están enteras más abajo, en esta misma página.
 
-Las dos necesitan una cuenta de Claude. Sirve la gratuita, que admite un solo conector personalizado: si ya hay otro puesto, hay que quitarlo antes de añadir el nuevo.
+Todas necesitan una cuenta de Claude. Sirve la gratuita, que admite un solo conector personalizado: si ya hay otro puesto, hay que quitarlo antes de añadir el nuevo.
 
 ---
 
@@ -136,6 +137,48 @@ Las cuentas de TikTok, YouTube, Instagram, X, Facebook y LinkedIn se conectan en
 
 ---
 
+## Parte C. Escenas generadas con IA, con Higgsfield
+
+Son tres pasos:
+
+1. Crear la cuenta de Higgsfield y elegir el plan. Una sola vez.
+2. Conectarla a Claude. Una sola vez.
+3. Pedirle a Claude el vídeo (recetas 10 y 11).
+
+### Lo primero: la cuenta de Higgsfield
+
+Todo empieza por crear la cuenta de Higgsfield desde este enlace, en el mismo navegador y sin cerrarlo: https://higgsfield.ai?fpr=claudexplica
+
+Al crearla, Higgsfield da hasta un 50 % de descuento en el primer pago durante las tres horas siguientes. El descuento que vale es el que se ve en pantalla. Por eso conviene crear la cuenta cuando ya se va a elegir el plan.
+
+### Qué más hace falta
+
+- Un plan de Higgsfield. Desde Claude, cada vídeo gasta créditos del plan: los modelos ilimitados y las generaciones gratis de su web no valen aquí. Las cuentas nuevas que cumplen sus condiciones pueden tener 3 días de prueba gratis en Claude.
+- Precios con pago anual, el 20 de noviembre de 2026: Starter, 19 dólares al mes, con 270 créditos al mes. Plus, 33 dólares al mes, con 1.200 créditos. Ultra, 50 dólares al mes, con 3.000 créditos.
+- Lo que gasta un clip de 10 segundos con Seedance 2.5: 70 créditos en 720p, 160 en 1080p y 280 en 4K. Con el Starter salen unos 3 clips de 10 segundos al mes en 720p; con el Plus, unos 17.
+
+### Conectar Higgsfield a Claude, una sola vez
+
+Con la cuenta de Higgsfield ya creada:
+
+1. Abrir este enlace, que deja el conector ya rellenado: https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Higgsfield&connectorUrl=https%3A%2F%2Fmcp.higgsfield.ai%2Fmcp
+   Si no se rellena solo: en los conectores de Claude (https://claude.ai/customize/connectors), «Add» y «Add custom connector». Nombre: Higgsfield. Dirección: `https://mcp.higgsfield.ai/mcp`. Es una dirección para Claude: abierta en el navegador no sirve.
+   Se hace en claude.ai desde un navegador o en la app del ordenador; una vez puesto, sirve también en la app del móvil.
+2. Seguir hasta «Add» y pulsar «Connect». Se abre Higgsfield: se entra con la cuenta recién creada y se autoriza el acceso.
+3. De vuelta en el chat, mirar que Higgsfield está activado (botón «+» y «Connectors») y preguntar: «¿Cuántos créditos me quedan en Higgsfield?». Si contesta con el saldo, está conectado.
+
+### Receta 10. Un vídeo desde una descripción o una foto
+
+1. Se le cuenta a Claude la escena, el formato y la duración. Por ejemplo: «Con Higgsfield, haz un vídeo vertical de 10 segundos en 720p: un chico en bici por una avenida con palmeras al atardecer. Antes de generarlo, dime cuántos créditos cuesta». Para animar una foto, se adjunta la foto y se cuenta qué tiene que pasar.
+2. Claude elige el modelo, escribe la descripción completa y dice el precio en créditos. Se le puede pedir que lo haga con dos modelos para comparar.
+3. Claude avisa cuando está listo, con el enlace para verlo. Los cambios se piden con palabras, y cada uno es una generación nueva que gasta créditos.
+
+### Receta 11. Un anuncio de producto
+
+Se le dan a Claude las fotos del producto o su página: «Con Higgsfield, hazme anuncios de este producto con Ads Studio: (enlace o fotos)». Lo demás es igual que en la receta 10: primero el precio, después el vídeo.
+
+---
+
 ## Si algo no sale
 
 - Claude dice que no tiene el conector: se activa en el botón «+», «Connectors», o se abre una conversación nueva.
@@ -143,3 +186,4 @@ Las cuentas de TikTok, YouTube, Instagram, X, Facebook y LinkedIn se conectan en
 - Revid avisa al generar de que hace falta un plan: buscar y calcular el precio van con la cuenta gratis; generar pide un plan activo, aunque queden créditos. Al pagarlo, el código CLAUDEXPLICA.
 - Submagic dice que no hay créditos: se le pregunta a Claude cuántos quedan. Cada vídeo necesita todos sus créditos; si no llegan, no se cobra nada.
 - El enlace de subida ha caducado o rechaza el vídeo: se le pide otro a Claude, o un vídeo más corto.
+- Higgsfield no genera por falta de créditos: se le pregunta a Claude el saldo. Desde Claude solo valen los créditos del plan o la prueba gratis.
