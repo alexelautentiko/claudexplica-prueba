@@ -55,7 +55,6 @@
   h1 { margin: 0 0 10px; font-size: 31px; line-height: 1.12; font-weight: 850; letter-spacing: -.02em; text-wrap: balance; }
   h1 em { font-style: normal; color: var(--naranja); }
   .sub { margin: 0 auto; max-width: 34ch; color: var(--suave); text-wrap: pretty; }
-  .pista { margin: 14px auto 0; max-width: 34ch; font-size: 15px; font-weight: 650; }
 
   /* Dos estados: «abriendo» (la página salta sola) y el del botón. */
   .en-abriendo { display: none; }
@@ -106,7 +105,6 @@
   <h1 class="en-boton">Haz vídeos con Claude, <em>sin salir en cámara.</em></h1>
   <p class="sub en-boton">Se abre Claude con el mensaje ya escrito. Te pregunta el tema y te guía paso a paso.</p>
 
-  <p class="pista" id="pista" hidden>Si Instagram te pregunta si quieres salir, dile que sí.</p>
 
   <div class="acciones en-boton">
     <a class="boton principal" id="abrir" href="https://claude.ai/new" rel="noopener">Abrir en Claude <span class="flecha" aria-hidden="true">→</span></a>
@@ -198,11 +196,6 @@
   document.getElementById('mensaje').textContent = MENSAJE;
   document.getElementById('abrir').href = principal;
 
-  if (instagram || facebook) {
-    var pista = document.getElementById('pista');
-    if (facebook && !instagram) pista.textContent = 'Si Facebook te pregunta si quieres salir, dile que sí.';
-    pista.hidden = false;
-  }
   // La red: al entrar no se ve. Sale solo si, tras pulsar el botón, la página sigue en pantalla (el salto no ha hecho nada).
   if (android) {
     document.getElementById('chrome').href = viaChrome;
