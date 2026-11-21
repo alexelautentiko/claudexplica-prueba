@@ -45,6 +45,8 @@ Todas las partes están enteras más abajo, en esta misma página.
 
 Todas necesitan una cuenta de Claude. Revid, Submagic, HeyGen y Zernio se añaden como conector personalizado, y la cuenta gratuita de Claude admite uno solo: si ya hay otro puesto, hay que quitarlo antes de añadir el nuevo. Shopify, ElevenLabs y Canva están en el directorio de conectores de Claude y no cuentan para ese límite. Las recetas 24 y 25 las hace Claude solo. La parte C, según HeyGen, pide un plan de pago de Claude.
 
+Antes de usar una herramienta por primera vez en la conversación, Claude mira si trae sus propias instrucciones: una skill de esa herramienta, o las skills y guías que ofrece su conector. Si las hay, las carga y las sigue para manejarla. Esta guía dice qué se hace y en qué orden; las instrucciones de la herramienta, cómo se usa.
+
 ---
 
 ## Parte A. Un vídeo sin salir en cámara, con Revid
