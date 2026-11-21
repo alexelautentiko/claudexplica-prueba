@@ -46,6 +46,7 @@ const html = `<!doctype html>
 <meta name="description" content="${esc(descripcion)}">
 <link rel="canonical" href="${DOMINIO}/guia/">
 <link rel="alternate" type="text/markdown" href="${DOMINIO}/guia.md">
+<meta property="og:url" content="${DOMINIO}/guia/">
 <meta property="og:title" content="Guía para crear con Claude">
 <meta property="og:description" content="${esc(descripcion)}">
 <link rel="icon" type="image/png" href="/icono.png">
