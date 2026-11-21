@@ -1,0 +1,41 @@
+# Cada vez que cambia la guía (o la página), rehace guia/index.html, sitemap.xml y robots.txt y los sube.
+# Así la versión en HTML y el sitemap nunca se quedan atrás, la cambie quien la cambie.
+name: Guía en HTML y sitemap
+
+on:
+  push:
+    branches: [main]
+    paths: ['guia.md', 'index.html', 'scripts/guia-html.mjs', '.github/workflows/guia.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guia
+  cancel-in-progress: false
+
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install --no-save --no-package-lock marked@14.1.4
+      - run: node scripts/guia-html.mjs .
+      - name: Subir si ha cambiado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add guia/index.html sitemap.xml robots.txt
+          if git diff --cached --quiet; then
+            echo "Ya estaba al día."
+          else
+            git commit -m "guia/ y sitemap, al día con guia.md"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
