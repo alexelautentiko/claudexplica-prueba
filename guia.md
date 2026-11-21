@@ -1,8 +1,8 @@
 # El sistema para crear con Claude
 
-Guía de @claudexplica. Versión D11.1, del 21 de noviembre de 2026.
+Guía de @claudexplica. Versión D12, del 21 de noviembre de 2026.
 
-Este es el sistema de @claudexplica para crear con Claude desde un chat: vídeos, una tienda o un producto digital, voces y agentes que atienden a tus clientes, el WhatsApp de tu negocio, tus redes, lo que funciona en tu competencia, una web, presentaciones, imágenes y guiones. Claude hace el trabajo, solo o con una herramienta conectada a tu cuenta.
+Este es el sistema de @claudexplica para crear con Claude desde un chat: vídeos, una tienda o un producto digital, voces y agentes que atienden a tus clientes, el WhatsApp de tu negocio, tus redes, lo que se busca y lo que funciona en tu tema y en tu competencia, una web, presentaciones, imágenes y guiones. Claude hace el trabajo, solo o con una herramienta conectada a tu cuenta.
 
 ## Lo primero: qué quieres crear
 
@@ -13,9 +13,10 @@ Se elige una cosa antes de empezar. Si la persona ya ha dicho qué quiere, se va
 - Un vídeo sin salir en cámara: parte A, recetas 1 y 2.
 - Un anuncio de tu producto: receta 4.
 - Editar un vídeo que ya has grabado: parte B, recetas 6 y 7.
-- Cortos de un vídeo largo: receta 8.
+- Cortos de un vídeo largo, como un pódcast o un directo: receta 8.
 - Un vídeo con presentador o con tu avatar: parte C, recetas 10 y 11.
 - Guiones para tus reels: parte I, receta 31.
+- Ideas y títulos para tus vídeos de YouTube, con lo que se busca: parte K, recetas 37 y 39.
 
 **Vender**
 
@@ -43,9 +44,10 @@ Se elige una cosa antes de empezar. Si la persona ya ha dicho qué quiere, se va
 - Publicar o programar en todas tus redes: parte F, receta 20.
 - Contestar comentarios y mensajes: receta 21.
 - Respuestas automáticas en Instagram: receta 22.
-- Ver qué funciona: receta 23.
+- Qué funciona en tus propias cuentas: receta 23.
 - El plan de contenido del mes: receta 32.
 - Qué funciona en las cuentas de tu competencia: receta 34.
+- Qué vídeos se salen en tu tema, en YouTube, Instagram y TikTok: parte K, receta 38.
 
 **Web y diseño**
 
@@ -56,7 +58,7 @@ Se elige una cosa antes de empezar. Si la persona ya ha dicho qué quiere, se va
 
 Todas las partes están enteras más abajo, en esta misma página.
 
-Todas necesitan una cuenta de Claude. Revid, Submagic, HeyGen, Zernio, Wassenger y Apify se añaden como conector personalizado, y la cuenta gratuita de Claude admite uno solo: si ya hay otro puesto, hay que quitarlo antes de añadir el nuevo. Shopify, ElevenLabs, Lovable y Canva están en el directorio de conectores de Claude y no cuentan para ese límite. Las recetas 24, 25 y 31 a 33 las hace Claude solo. La parte C, según HeyGen, pide un plan de pago de Claude.
+Todas necesitan una cuenta de Claude. Revid, Submagic, HeyGen, Zernio, Wassenger y Apify se añaden como conector personalizado, y la cuenta gratuita de Claude admite uno solo: si ya hay otro puesto, hay que quitarlo antes de añadir el nuevo. Shopify, ElevenLabs, Lovable, Canva y vidIQ están en el directorio de conectores de Claude y no cuentan para ese límite. Las recetas 24, 25 y 31 a 33 las hace Claude solo. La parte C, según HeyGen, pide un plan de pago de Claude.
 
 Al empezar una parte, Claude dice en una frase para qué va bien esa herramienta y para qué no (su línea «Va bien para»), junto al enlace para crear la cuenta. Si no encaja con lo que la persona quiere, propone la parte que sí encaja. Solo pregunta lo que puede bloquear: si su Claude es gratuito y ya tiene otro conector personalizado puesto, y en la parte C, si su Claude es de pago.
 
@@ -181,7 +183,9 @@ Cuesta 20 créditos por vídeo, y los cambios no gastan. La cuenta gratis trae u
 
 ### Receta 8. Cortos de un vídeo largo
 
-Se le da a Claude el enlace de un vídeo de YouTube: «Con Submagic, saca cortos de este vídeo: (enlace)». Submagic elige los mejores momentos y los deja en vertical, con subtítulos. Cuesta 8 créditos.
+Se le da a Claude el enlace de un vídeo de YouTube, de hasta 3 horas: «Con Submagic, saca cortos de este vídeo: (enlace)». Submagic elige los mejores momentos y los deja en vertical, con subtítulos y una puntuación de cada uno. Se miran antes de publicarlos.
+
+Cuesta 8 créditos por vídeo, dure lo que dure. Con la cuenta gratis se ve qué cortos saca; para descargarlos hace falta un plan. Starter da para unos 5 vídeos largos al mes.
 
 ### Receta 9. Publicarlo o programarlo
 
@@ -569,10 +573,57 @@ Sirve para conocer tu mercado. Mandar publicidad por correo o por mensaje a esos
 
 ---
 
+## Parte K. Qué se busca y qué vídeos se salen en tu tema, con vidIQ
+
+**Va bien para** saber qué busca la gente en YouTube sobre tu tema y qué vídeos de YouTube, Instagram y TikTok rinden mucho más de lo normal en su cuenta, con la cuenta gratis, para decidir tus próximos vídeos y sus títulos. **No va bien para** pagar esperando que la IA te haga miniaturas o vídeos que funcionen solos. Lo gratis da para unas 30 búsquedas al mes, y es lo que más se valora.
+
+Son tres pasos:
+
+1. Abrir vidIQ desde el enlace del canal, crear la cuenta gratis y conectarla a Claude. Una sola vez.
+2. Pedirle a Claude lo que se busca y lo que se sale en tu tema (recetas 37 y 38).
+3. Con eso, las ideas, el título y la descripción de tu vídeo (receta 39).
+
+### Lo primero: la cuenta gratis de vidIQ
+
+Todo empieza por abrir vidIQ desde este enlace, en el mismo navegador en el que se usa Claude: https://vidiq.com/claudexplica
+
+No hace falta elegir plan: la cuenta gratis se crea en ese mismo navegador al conectar vidIQ en Claude.
+
+### Qué cuesta
+
+Precios del 21 de noviembre de 2026:
+
+- Gratis: 150 créditos al mes. Cada búsqueda gasta 5.
+- Boost: 199 € al año (16,58 € al mes), con 2.000 créditos al mes. Los que sobran no pasan al mes siguiente. Se renueva solo y no devuelve lo pagado, así que se cancela antes de la renovación si no se va a seguir.
+
+### Conectar vidIQ a Claude, una sola vez
+
+1. Abrir https://claude.ai/directory/vidiq y pulsar «Connect». También desde el chat: botón «+», «Connectors», y buscar vidIQ.
+2. Se abre vidIQ: se crea la cuenta gratis (o se entra con ella) y se aprueba el acceso.
+3. Está en el directorio de Claude, así que no cuenta como conector personalizado.
+
+### Receta 37. Qué se busca en YouTube sobre tu tema
+
+Se le pide a Claude, por ejemplo: «Con vidIQ, dime las 20 preguntas que más se buscan en YouTube en español sobre "batch cooking", con cuánto se buscan y cuánta competencia tienen. Dime antes cuántos créditos gastará. Agrúpalas en 5 ideas de vídeo».
+
+### Receta 38. Qué vídeos se salen en tu tema
+
+Se le pide a Claude, por ejemplo: «Con vidIQ, busca vídeos en español de los últimos 3 meses sobre "batch cooking" en YouTube, Instagram y TikTok que rinden mucho más que lo normal en su cuenta. Dime qué tienen en común los 10 mejores: tema, duración, primera frase y formato».
+
+Son vídeos de otras cuentas, para aprender de ellos, no para copiarlos.
+
+### Receta 39. El título y la descripción de tu vídeo
+
+Con lo de las recetas 37 y 38, se le pide a Claude, por ejemplo: «Con vidIQ, mira cuánto se busca cada una de estas palabras: (3 o 4 palabras de tu tema). Con la que más se busque, escríbeme 5 títulos para mi vídeo de YouTube y una descripción de 3 líneas».
+
+Claude escribe el título; vidIQ pone los datos de lo que se busca.
+
+---
+
 ## Si algo no sale
 
 - Claude dice que no tiene el conector: se activa en el botón «+», «Connectors», o se abre una conversación nueva.
-- Claude no deja añadir el conector: con Claude gratis solo cabe uno personalizado (Revid, Submagic, HeyGen, Zernio, Wassenger o Apify). Se quita el que haya. Shopify, ElevenLabs, Lovable y Canva no cuentan.
+- Claude no deja añadir el conector: con Claude gratis solo cabe uno personalizado (Revid, Submagic, HeyGen, Zernio, Wassenger o Apify). Se quita el que haya. Shopify, ElevenLabs, Lovable, Canva y vidIQ no cuentan.
 - Revid avisa al generar de que hace falta un plan: buscar y calcular el precio van con la cuenta gratis; generar pide un plan activo, aunque queden créditos. Al pagarlo, el código CLAUDEXPLICA.
 - Submagic dice que no hay créditos: se le pregunta a Claude cuántos quedan. Cada vídeo necesita todos sus créditos; si no llegan, no se cobra nada.
 - El enlace de subida ha caducado o rechaza el vídeo: se le pide otro a Claude, o un vídeo más corto.
@@ -584,3 +635,4 @@ Sirve para conocer tu mercado. Mandar publicidad por correo o por mensaje a esos
 - Lovable se queda sin créditos: la cuenta gratis da 5 al día y se recargan al día siguiente. Para no gastarlos, los cambios se piden juntos y bien explicados.
 - Apify dice que no queda crédito: el gratis vuelve al empezar el mes siguiente. Antes de cada búsqueda, se le pide a Claude el coste y un tope.
 - Zernio dice que no hay cuentas conectadas: se conecta una red en la app de Zernio y se vuelve a pedir. Si Claude no llega a Zernio, se quita el conector y se añade de nuevo.
+- vidIQ dice que no quedan créditos: los 150 gratis vuelven el mes siguiente. Antes de cada búsqueda, se le pide a Claude cuántos gastará.
