@@ -13,3 +13,10 @@ Para verla sin 3D: añadir ?sin3d (o &sin3d) a la dirección.
 
 Con el dedo o el ratón se le da la vuelta entera (desde el 19-nov-2026; antes giraba ±20°). Al soltarla sigue con el
 impulso, se frena y vuelve de frente. Para dejarla quieta en un ángulo y revisar el modelo: ?giro=180 (grados).
+
+Con gestos (21-nov-2026, para la página en dos pasos, /v11/):
+mascota3d-gestos.fuente.js  La misma escena, que además escucha el evento «cx:gesto» en la caja y hace un gesto:
+                            giro (vídeo), canto (voz), asiente (agentes), salto (vender), baile (redes), pirueta (diseño),
+                            celebra (al elegir un caso) y hola (al volver). Los saltos y el aplastarse los hace la página.
+mascota3d-gestos.js         Lo que carga la v11. Se rehace igual que mascota3d.js, cambiando los nombres.
+La página de la raíz sigue con mascota3d.js, sin gestos.
