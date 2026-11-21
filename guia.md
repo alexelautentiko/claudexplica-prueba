@@ -1,6 +1,6 @@
 # El sistema para crear con Claude
 
-Guía de @claudexplica. Versión D12, del 21 de noviembre de 2026.
+Guía de @claudexplica. Versión D11.1, del 21 de noviembre de 2026.
 
 Este es el sistema de @claudexplica para crear con Claude desde un chat: vídeos, una tienda o un producto digital, voces y agentes que atienden a tus clientes, el WhatsApp de tu negocio, tus redes, lo que funciona en tu competencia, una web, presentaciones, imágenes y guiones. Claude hace el trabajo, solo o con una herramienta conectada a tu cuenta.
 
