@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: /pruebas/
+Disallow: /recetas/
+Disallow: /v2/
+Disallow: /v3/
+Disallow: /v4/
+Disallow: /v5/
+Disallow: /v6/
+Disallow: /v7/
+Disallow: /v8/
+Disallow: /v9/
+Disallow: /v10/
+Disallow: /v11/
+Disallow: /v12/
+Disallow: /v13/
+
+Sitemap: https://claudexplica.xyz/sitemap.xml
