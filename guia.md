@@ -1,8 +1,8 @@
 # El sistema para crear con Claude
 
-Guía de @claudexplica. Versión D9, del 21 de noviembre de 2026.
+Guía de @claudexplica. Versión D10, del 21 de noviembre de 2026.
 
-Este es el sistema de @claudexplica para crear con Claude desde un chat: vídeos, una tienda o un producto digital, voces y agentes que atienden a tus clientes, tus redes, una web, presentaciones e imágenes. Claude hace el trabajo, solo o con una herramienta conectada a tu cuenta.
+Este es el sistema de @claudexplica para crear con Claude desde un chat: vídeos, una tienda o un producto digital, voces y agentes que atienden a tus clientes, el WhatsApp de tu negocio, tus redes, una web, presentaciones e imágenes. Claude hace el trabajo, solo o con una herramienta conectada a tu cuenta.
 
 ## Lo primero: qué quieres crear
 
@@ -26,7 +26,14 @@ Se elige una cosa antes de empezar. Si la persona ya ha dicho qué quiere, se va
 - Una locución o tu propia voz: parte E, recetas 15 y 16.
 - Un agente de voz para tu web: receta 17.
 - Un agente que contesta el teléfono: receta 18.
-- Un agente de WhatsApp: receta 19.
+- Un agente que contesta solo tu WhatsApp: receta 19.
+
+**El WhatsApp de tu negocio**
+
+- Ver quién espera respuesta y contestar con Claude: parte H, receta 27.
+- Seguimientos y recordatorios: receta 28.
+- Un aviso a tus clientes: receta 29.
+- El resumen del día: receta 30.
 
 **Redes**
 
@@ -43,7 +50,7 @@ Se elige una cosa antes de empezar. Si la persona ya ha dicho qué quiere, se va
 
 Todas las partes están enteras más abajo, en esta misma página.
 
-Todas necesitan una cuenta de Claude. Revid, Submagic, HeyGen y Zernio se añaden como conector personalizado, y la cuenta gratuita de Claude admite uno solo: si ya hay otro puesto, hay que quitarlo antes de añadir el nuevo. Shopify, ElevenLabs y Canva están en el directorio de conectores de Claude y no cuentan para ese límite. Las recetas 24 y 25 las hace Claude solo. La parte C, según HeyGen, pide un plan de pago de Claude.
+Todas necesitan una cuenta de Claude. Revid, Submagic, HeyGen, Zernio y Wassenger se añaden como conector personalizado, y la cuenta gratuita de Claude admite uno solo: si ya hay otro puesto, hay que quitarlo antes de añadir el nuevo. Shopify, ElevenLabs y Canva están en el directorio de conectores de Claude y no cuentan para ese límite. Las recetas 24 y 25 las hace Claude solo. La parte C, según HeyGen, pide un plan de pago de Claude.
 
 Antes de usar una herramienta por primera vez en la conversación, Claude mira si trae sus propias instrucciones: una skill de esa herramienta, o las skills y guías que ofrece su conector. Si las hay, las carga y las sigue para manejarla. Esta guía dice qué se hace y en qué orden; las instrucciones de la herramienta, cómo se usa.
 
@@ -399,10 +406,73 @@ Se le pide a Claude, por ejemplo: «Hazme una presentación de 8 diapositivas pa
 
 ---
 
+## Parte H. El WhatsApp de tu negocio, con Wassenger
+
+Claude lee los chats de tu WhatsApp de empresa, te dice quién espera respuesta y te escribe las respuestas. Solo envía lo que le dices que envíe.
+
+Son tres pasos:
+
+1. Crear la cuenta de Wassenger y conectar tu número de WhatsApp. Una sola vez.
+2. Conectar Wassenger a Claude con una clave. Una sola vez.
+3. Pedirle a Claude lo que necesites (recetas 27 a 30).
+
+Para Instagram y las demás redes, la parte F.
+
+### Lo primero: la cuenta de Wassenger
+
+Todo empieza por crear la cuenta de Wassenger desde este enlace: https://wassenger.com/?ref=cu309m
+
+Los 7 primeros días son gratis y no piden tarjeta. Dentro, Wassenger guía los pasos de Meta para conectar el número, de una de tres formas:
+
+- Seguir usando la app WhatsApp Business en tu móvil con el mismo número (la opción «Coexistence»). Es la más cómoda si ya atiendes desde el móvil.
+- Pasar a Wassenger el número que ya usas.
+- Empezar con un número nuevo.
+
+### Qué cuesta
+
+Después de la prueba, un plan de Wassenger (precios del 21 de noviembre de 2026):
+
+- Professional: 39,90 € al mes, o 33,25 € con pago anual. Hasta 3 personas en la bandeja, el asistente de IA y la conexión con Claude.
+- Business: 69,90 € al mes. Hasta 6 personas y automatizaciones.
+
+Meta cobra aparte, a precio de coste, las plantillas: los mensajes que abren una conversación o que se envían cuando han pasado más de 24 horas desde el último mensaje del cliente.
+
+### Conectar Wassenger a Claude, una sola vez
+
+Con el número ya conectado en Wassenger:
+
+1. Crear una clave para Claude en https://app.wassenger.com/developers/apikeys y copiarla. Si un día la borras, Claude deja de tener acceso.
+2. En los conectores de Claude (https://claude.ai/customize/connectors), «Add» y «Add custom connector». Nombre: Wassenger. Dirección: `https://api.wassenger.com/mcp?key=TU_CLAVE`, con tu clave en lugar de TU_CLAVE.
+   La clave va solo ahí: no se pega en el chat.
+   Se hace en claude.ai desde un navegador o en la app del ordenador; una vez puesto, sirve también en la app del móvil.
+3. De vuelta en el chat, mirar que Wassenger está activado (botón «+» y «Connectors») y pedir: «Con Wassenger, comprueba que mi WhatsApp está conectado». Tiene que responder con tu número activo.
+
+### Receta 27. Quién espera respuesta
+
+Se le pide a Claude: «Con Wassenger, enséñame los clientes que llevan más tiempo esperando respuesta en WhatsApp y escríbeme una respuesta para cada uno». Claude enseña cada respuesta y envía solo las que le apruebas.
+
+### Receta 28. Seguimientos y recordatorios
+
+Se le pide a Claude, por ejemplo: «Con Wassenger, busca a quien me pidió precio esta semana y no ha vuelto a escribir, y prográmale un mensaje para mañana a las 10:00». O el recordatorio de una cita, la víspera.
+
+Si han pasado más de 24 horas desde el último mensaje del cliente, WhatsApp solo deja enviar una plantilla aprobada por Meta. Claude la prepara y Meta la revisa antes de que se pueda usar.
+
+### Receta 29. Un aviso a tus clientes
+
+Se le pide a Claude, por ejemplo: «Con Wassenger, manda este aviso a mis contactos con la etiqueta "clientes": (texto)». Va como plantilla, y Meta cobra cada envío.
+
+Solo a quien te ha dado su número y quiere recibir tus mensajes. WhatsApp limita o bloquea los números que escriben a quien no los conoce.
+
+### Receta 30. El resumen del día
+
+Se le pide a Claude: «Con Wassenger, resúmeme los chats de ayer: quién preguntó qué y qué queda pendiente». Sirve para empezar el día sabiendo a quién contestar primero.
+
+---
+
 ## Si algo no sale
 
 - Claude dice que no tiene el conector: se activa en el botón «+», «Connectors», o se abre una conversación nueva.
-- Claude no deja añadir el conector: con Claude gratis solo cabe uno personalizado (Revid, Submagic, HeyGen o Zernio). Se quita el que haya. Shopify, ElevenLabs y Canva no cuentan.
+- Claude no deja añadir el conector: con Claude gratis solo cabe uno personalizado (Revid, Submagic, HeyGen, Zernio o Wassenger). Se quita el que haya. Shopify, ElevenLabs y Canva no cuentan.
 - Revid avisa al generar de que hace falta un plan: buscar y calcular el precio van con la cuenta gratis; generar pide un plan activo, aunque queden créditos. Al pagarlo, el código CLAUDEXPLICA.
 - Submagic dice que no hay créditos: se le pregunta a Claude cuántos quedan. Cada vídeo necesita todos sus créditos; si no llegan, no se cobra nada.
 - El enlace de subida ha caducado o rechaza el vídeo: se le pide otro a Claude, o un vídeo más corto.
@@ -410,4 +480,5 @@ Se le pide a Claude, por ejemplo: «Hazme una presentación de 8 diapositivas pa
 - La tienda de Shopify pide contraseña: hasta que se guarda en una cuenta y se abre al público, nadie puede comprar. La plantilla puede traer textos en inglés y no trae fotos: hay que revisarlos antes de abrirla.
 - El enlace del audio de ElevenLabs ya no abre: caduca en unas dos horas. Se le pide a Claude que lo genere otra vez.
 - El número de WhatsApp no se deja importar: no puede estar en uso en la app de WhatsApp ni con otro proveedor. Hace falta otro número, o darlo de baja allí.
+- Wassenger dice que falta la clave o que no es válida: se crea otra en https://app.wassenger.com/developers/apikeys y se cambia en la dirección del conector. Si dice que no hay ningún número activo, se conecta el número dentro de Wassenger.
 - Zernio dice que no hay cuentas conectadas: se conecta una red en la app de Zernio y se vuelve a pedir. Si Claude no llega a Zernio, se quita el conector y se añade de nuevo.
