@@ -1,8 +1,8 @@
 # El sistema para crear con Claude
 
-Guía de @claudexplica. Versión D10, del 21 de noviembre de 2026.
+Guía de @claudexplica. Versión D11, del 21 de noviembre de 2026.
 
-Este es el sistema de @claudexplica para crear con Claude desde un chat: vídeos, una tienda o un producto digital, voces y agentes que atienden a tus clientes, el WhatsApp de tu negocio, tus redes, una web, presentaciones e imágenes. Claude hace el trabajo, solo o con una herramienta conectada a tu cuenta.
+Este es el sistema de @claudexplica para crear con Claude desde un chat: vídeos, una tienda o un producto digital, voces y agentes que atienden a tus clientes, el WhatsApp de tu negocio, tus redes, lo que funciona en tu competencia, una web, presentaciones, imágenes y guiones. Claude hace el trabajo, solo o con una herramienta conectada a tu cuenta.
 
 ## Lo primero: qué quieres crear
 
@@ -15,11 +15,14 @@ Se elige una cosa antes de empezar. Si la persona ya ha dicho qué quiere, se va
 - Editar un vídeo que ya has grabado: parte B, recetas 6 y 7.
 - Cortos de un vídeo largo: receta 8.
 - Un vídeo con presentador o con tu avatar: parte C, recetas 10 y 11.
+- Guiones para tus reels: parte I, receta 31.
 
 **Vender**
 
 - Una tienda online: parte D, recetas 12 y 13.
 - Un producto digital, como un ebook o una plantilla: receta 14.
+- Qué dicen las reseñas de tu negocio y de tu competencia: parte J, receta 35.
+- Los negocios de tu zona, para conocer tu mercado: receta 36.
 
 **Voz y agentes**
 
@@ -41,22 +44,31 @@ Se elige una cosa antes de empezar. Si la persona ya ha dicho qué quiere, se va
 - Contestar comentarios y mensajes: receta 21.
 - Respuestas automáticas en Instagram: receta 22.
 - Ver qué funciona: receta 23.
+- El plan de contenido del mes: receta 32.
+- Qué funciona en las cuentas de tu competencia: receta 34.
 
 **Web y diseño**
 
 - Una web o una landing: parte G, receta 24.
 - Una presentación: receta 25.
 - Imágenes y carruseles: receta 26.
+- Una mini app para tus clientes: receta 33.
 
 Todas las partes están enteras más abajo, en esta misma página.
 
-Todas necesitan una cuenta de Claude. Revid, Submagic, HeyGen, Zernio y Wassenger se añaden como conector personalizado, y la cuenta gratuita de Claude admite uno solo: si ya hay otro puesto, hay que quitarlo antes de añadir el nuevo. Shopify, ElevenLabs y Canva están en el directorio de conectores de Claude y no cuentan para ese límite. Las recetas 24 y 25 las hace Claude solo. La parte C, según HeyGen, pide un plan de pago de Claude.
+Todas necesitan una cuenta de Claude. Revid, Submagic, HeyGen, Zernio, Wassenger y Apify se añaden como conector personalizado, y la cuenta gratuita de Claude admite uno solo: si ya hay otro puesto, hay que quitarlo antes de añadir el nuevo. Shopify, ElevenLabs, Lovable y Canva están en el directorio de conectores de Claude y no cuentan para ese límite. Las recetas 24, 25 y 31 a 33 las hace Claude solo. La parte C, según HeyGen, pide un plan de pago de Claude.
+
+Al empezar una parte, Claude dice en una frase para qué va bien esa herramienta y para qué no (su línea «Va bien para»), junto al enlace para crear la cuenta. Si no encaja con lo que la persona quiere, propone la parte que sí encaja. Solo pregunta lo que puede bloquear: si su Claude es gratuito y ya tiene otro conector personalizado puesto, y en la parte C, si su Claude es de pago.
 
 Antes de usar una herramienta por primera vez en la conversación, Claude mira si trae sus propias instrucciones: una skill de esa herramienta, o las skills y guías que ofrece su conector. Si las hay, las carga y las sigue para manejarla. Esta guía dice qué se hace y en qué orden; las instrucciones de la herramienta, cómo se usa.
+
+Si la persona pide a Claude que recuerde esta guía, Claude guarda en su memoria la dirección de la guía y para qué sirve: crear con Claude. Si su cuenta no tiene la memoria activada, se lo dice en una frase y le explica que se activa en los ajustes de Claude, sin insistir.
 
 ---
 
 ## Parte A. Un vídeo sin salir en cámara, con Revid
+
+**Va bien para** vídeos cortos de imágenes con voz y subtítulos, desde una idea o un guion: listas, datos curiosos, explicaciones. **No va bien para** historias con los mismos personajes en cada escena, ni para editar un vídeo ya grabado (eso es la parte B). Si las fotos de un producto llevan texto, el texto puede salir estropeado: el anuncio sale mejor desde la página del producto.
 
 Son tres pasos:
 
@@ -118,6 +130,8 @@ Las cuentas de TikTok, YouTube e Instagram se conectan en los ajustes de Revid. 
 
 ## Parte B. Editar un vídeo que ya has grabado, con Submagic
 
+**Va bien para** poner subtítulos, imágenes de apoyo y estilo a un vídeo corto que ya has grabado. **No va bien para** quien necesita 4K o decidir cada corte a mano. Los cortos de un vídeo largo (receta 8) se revisan antes de publicarlos.
+
 Son tres pasos:
 
 1. Crear la cuenta gratis de Submagic y conectarla a Claude. Una sola vez.
@@ -177,6 +191,8 @@ Las cuentas de TikTok, YouTube, Instagram, X, Facebook y LinkedIn se conectan en
 
 ## Parte C. Un vídeo con presentador, con HeyGen
 
+**Va bien para** un vídeo corto con alguien que habla a cámara: tu avatar o uno de sus presentadores, diciendo un guion. **No va bien para** que monte el vídeo entero sin guion, ni para vídeos largos o en serie. Pide un plan de pago de Claude.
+
 Son tres pasos:
 
 1. Crear la cuenta de HeyGen y conectarla a Claude. Una sola vez.
@@ -216,6 +232,8 @@ Después se le pide a Claude: «Con HeyGen, haz este vídeo con mi avatar: (guio
 ---
 
 ## Parte D. Una tienda online o un producto digital, con Shopify
+
+**Va bien para** montar tu tienda sin programar, si ya tienes producto y una forma de traer visitas. **No va bien para** vender sin tráfico, ni para un catálogo digital muy grande. Antes de abrirla, haz una compra de prueba; y si no vas a seguir, cancela antes de que acabe la prueba.
 
 Son tres pasos:
 
@@ -262,6 +280,8 @@ Con la tienda ya guardada en tu cuenta de Shopify (receta 13):
 ---
 
 ## Parte E. Voz y agentes, con ElevenLabs
+
+**Va bien para** locuciones que suenan reales y para clonar tu voz con un audio de calidad. **No va bien para** conservar un acento muy marcado, ni para un agente de teléfono barato con muchas llamadas. Si pagas, quita la recarga automática: los créditos sin gastar se pierden al bajar de plan o cancelar.
 
 Son tres pasos:
 
@@ -332,6 +352,8 @@ Hace falta una cuenta de empresa en Meta y un número que no esté en uso en la 
 
 ## Parte F. Tus redes sociales, con Zernio
 
+**Va bien para** que Claude publique y programe en varias redes a la vez y te ayude a contestar comentarios y mensajes. **No va bien para** quien quiere subir muchas publicaciones de golpe sin tocar nada técnico. Es gratis con 2 cuentas; desde la tercera, de pago.
+
 Son tres pasos:
 
 1. Crear la cuenta gratis de Zernio, conectar tus redes y conectarlo a Claude. Una sola vez.
@@ -393,10 +415,13 @@ Las recetas 24 y 25 las hace Claude solo, sin conectar nada. La 26 usa Canva, qu
 1. Se le describe a Claude lo que quieres. Por ejemplo: «Hazme una landing para mi peluquería: servicios, precios, horario y un botón de WhatsApp. Estilo cálido y moderno». Claude la hace en el chat, como artefacto, y se ve al momento.
 2. Los cambios se piden con palabras: «el titular más grande», «añade una sección de opiniones».
 3. Para compartirla, el botón «Publish» del artefacto da un enlace público.
+4. Si la quieres en tu propio dominio o con un formulario que guarde datos, Claude la hace con Lovable, que está en el directorio de conectores (botón «+», «Connectors», Lovable). Para probarla, la cuenta gratis da 5 créditos al día, y cada cambio gasta: se piden juntos y bien explicados. El dominio propio pide su plan Pro, 25 € al mes (21 de noviembre de 2026).
 
 ### Receta 25. Una presentación
 
-Se le pide a Claude, por ejemplo: «Hazme una presentación de 8 diapositivas para presentar mi negocio: (datos)». Claude la hace como archivo de PowerPoint para descargar; si en tu cuenta no puede crear archivos, se le pide como artefacto, que se ve a pantalla completa. Los cambios se piden con palabras.
+1. Se le dice a Claude para qué es, a quién se la enseñas y cuántas diapositivas. Por ejemplo: «Hazme una presentación de 8 diapositivas para presentar mi negocio a un posible socio: (datos). Estilo sobrio, en azul y blanco». Si le faltan datos, Claude te los pregunta.
+2. Claude la hace como archivo de PowerPoint para descargar. Si en tu cuenta no puede crear archivos, se le pide como artefacto, que se ve a pantalla completa.
+3. Los cambios se piden con palabras: «la diapositiva 3, con menos texto», «añade una de precios». El archivo se abre en PowerPoint, Google Slides o Keynote para presentarlo o seguir retocándolo.
 
 ### Receta 26. Imágenes y carruseles, con Canva
 
@@ -407,6 +432,8 @@ Se le pide a Claude, por ejemplo: «Hazme una presentación de 8 diapositivas pa
 ---
 
 ## Parte H. El WhatsApp de tu negocio, con Wassenger
+
+**Va bien para** el negocio que atiende a sus clientes por WhatsApp y quiere que Claude le ayude a contestar, hacer seguimientos y avisar. **No va bien para** escribir a quien no te ha dado su número, ni para un agente que conteste solo (eso es la receta 19). No tiene plan gratis: 7 días de prueba y después desde 39,90 € al mes.
 
 Claude lee los chats de tu WhatsApp de empresa, te dice quién espera respuesta y te escribe las respuestas. Solo envía lo que le dices que envíe.
 
@@ -469,10 +496,83 @@ Se le pide a Claude: «Con Wassenger, resúmeme los chats de ayer: quién pregun
 
 ---
 
+## Parte I. Guiones, plan de contenido y mini apps, con Claude solo
+
+Las recetas 31 a 33 las hace Claude solo, sin conectar nada. Cada una acaba donde empieza otra parte de esta guía, por si quieres seguir.
+
+### Receta 31. Guiones para tus reels
+
+1. Se le dice a Claude el tema, a quién le hablas y cómo hablas. Por ejemplo: «Escríbeme 3 guiones de reel de 40 segundos sobre los errores al empezar a correr, para principiantes y en tono cercano. Cada uno con su gancho, el guion y el pie».
+2. Si tienes un reel que te funcionó, se le pega su texto y Claude sigue su estilo.
+3. Se elige uno y se retoca con palabras: «el gancho más corto», «sin tecnicismos».
+4. Para hacer el vídeo con ese guion: sin salir en cámara, la parte A; con presentador, la parte C. Si lo grabas tú, la parte B lo edita.
+
+### Receta 32. El plan de contenido del mes
+
+1. Se le dice a Claude de qué va tu cuenta, en qué redes estás y cuántas veces quieres publicar. Por ejemplo: «Hazme el plan de contenido de diciembre para mi cuenta de Instagram de recetas fáciles: 3 publicaciones a la semana, mezclando reels y carruseles».
+2. Claude lo devuelve como tabla: el día, el formato, la idea y el texto de cada publicación. Si lo quieres en Excel, se le pide el archivo.
+3. Los cambios se piden con palabras: «más reels y menos carruseles», «una semana dedicada a la Navidad».
+4. Para programarlo todo de una vez en tus redes, la parte F (receta 20).
+
+### Receta 33. Una mini app para tus clientes
+
+1. Se le describe a Claude qué tiene que hacer. Por ejemplo: «Hazme una calculadora de presupuestos para mi empresa de reformas: el cliente elige los metros, el tipo de suelo y si quiere pintura, y ve el precio aproximado». O un test que recomiende el producto que le va a cada cliente.
+2. Claude la hace en el chat, como artefacto, y se prueba al momento.
+3. Los cambios se piden con palabras: «añade el IVA», «el botón en verde».
+4. Para compartirla, el botón «Publish» del artefacto da un enlace público, que se pone en tu bio o en tu web (receta 24).
+
+---
+
+## Parte J. Lo que funciona en tu competencia y en tu zona, con Apify
+
+**Va bien para** sacar datos públicos que eliges tú (las cuentas de tu competencia, las reseñas de un negocio, los negocios de una zona) sin programar, y que Claude te diga qué significan. **No va bien para** conseguir el contacto de quien decide en una empresa, ni para mandar publicidad a esos negocios. Pide siempre a Claude el coste antes y ponle un tope: es lo que más sorprende a quien empieza.
+
+Son tres pasos:
+
+1. Crear la cuenta gratis de Apify y conectarla a Claude. Una sola vez.
+2. Pedirle a Claude los datos, con el coste antes (recetas 34 a 36).
+3. Leer lo que Claude saca de ellos.
+
+### Lo primero: la cuenta gratis de Apify
+
+Se crea en https://apify.com. Es gratis y no pide tarjeta.
+
+### Qué cuesta
+
+Precios del 21 de noviembre de 2026:
+
+- Gratis: 5 dólares de crédito al mes, que dan para cientos de resultados. Si se gastan, se para hasta el mes siguiente y no cobra nada. El crédito que sobra no pasa al mes siguiente.
+- Starter: 19 dólares al mes, más IVA, con 19 dólares de crédito. Hace falta si lo usas cada semana.
+
+### Conectar Apify a Claude, una sola vez
+
+1. Abrir este enlace, que deja el conector ya rellenado: https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Apify&connectorUrl=https%3A%2F%2Fmcp.apify.com
+   Si no se rellena solo: en los conectores de Claude (https://claude.ai/customize/connectors), «Add» y «Add custom connector». Nombre: Apify. Dirección: `https://mcp.apify.com`. Es una dirección para Claude: abierta en el navegador no sirve.
+2. Seguir hasta «Add». Se abre Apify: se entra con la cuenta recién creada y se aprueba el acceso.
+3. De vuelta en el chat, mirar que Apify está activado: botón «+» y «Connectors».
+
+### Receta 34. Qué funciona en las cuentas de tu competencia
+
+Se le pide a Claude, por ejemplo: «Con Apify, saca los últimos 30 reels de estas cuentas públicas de Instagram: @…, @…, @…. Antes dime cuánto costará y no gastes más de 1 dólar. Ordénalos por visualizaciones respecto a los seguidores de cada cuenta y dime qué tienen en común los 10 mejores: tema, duración, primera frase y formato».
+
+Son datos públicos y para uso propio: importa qué funciona, no quién comenta.
+
+### Receta 35. Qué dicen las reseñas de un negocio
+
+Se le pide a Claude, por ejemplo: «Con Apify, saca las últimas 300 reseñas de Google Maps de (enlace de mi negocio) y de (enlace de un competidor). Dime antes el coste y no pases de 50 céntimos. Resume qué elogian y qué critican más, con 3 citas cortas sin nombres, y dame 5 mejoras».
+
+### Receta 36. Los negocios de tu zona
+
+Se le pide a Claude, por ejemplo: «Con Apify, busca en Google Maps "peluquerías" en Chamberí (Madrid), máximo 100. Dime antes el coste y no pases de 1 dólar. Hazme una tabla con el nombre, la nota, el número de reseñas, el horario y la web, y dime dónde hay menos competencia».
+
+Sirve para conocer tu mercado. Mandar publicidad por correo o por mensaje a esos negocios sin que te la pidan está prohibido en España (LSSI).
+
+---
+
 ## Si algo no sale
 
 - Claude dice que no tiene el conector: se activa en el botón «+», «Connectors», o se abre una conversación nueva.
-- Claude no deja añadir el conector: con Claude gratis solo cabe uno personalizado (Revid, Submagic, HeyGen, Zernio o Wassenger). Se quita el que haya. Shopify, ElevenLabs y Canva no cuentan.
+- Claude no deja añadir el conector: con Claude gratis solo cabe uno personalizado (Revid, Submagic, HeyGen, Zernio, Wassenger o Apify). Se quita el que haya. Shopify, ElevenLabs, Lovable y Canva no cuentan.
 - Revid avisa al generar de que hace falta un plan: buscar y calcular el precio van con la cuenta gratis; generar pide un plan activo, aunque queden créditos. Al pagarlo, el código CLAUDEXPLICA.
 - Submagic dice que no hay créditos: se le pregunta a Claude cuántos quedan. Cada vídeo necesita todos sus créditos; si no llegan, no se cobra nada.
 - El enlace de subida ha caducado o rechaza el vídeo: se le pide otro a Claude, o un vídeo más corto.
@@ -481,4 +581,6 @@ Se le pide a Claude: «Con Wassenger, resúmeme los chats de ayer: quién pregun
 - El enlace del audio de ElevenLabs ya no abre: caduca en unas dos horas. Se le pide a Claude que lo genere otra vez.
 - El número de WhatsApp no se deja importar: no puede estar en uso en la app de WhatsApp ni con otro proveedor. Hace falta otro número, o darlo de baja allí.
 - Wassenger dice que falta la clave o que no es válida: se crea otra en https://app.wassenger.com/developers/apikeys y se cambia en la dirección del conector. Si dice que no hay ningún número activo, se conecta el número dentro de Wassenger.
+- Lovable se queda sin créditos: la cuenta gratis da 5 al día y se recargan al día siguiente. Para no gastarlos, los cambios se piden juntos y bien explicados.
+- Apify dice que no queda crédito: el gratis vuelve al empezar el mes siguiente. Antes de cada búsqueda, se le pide a Claude el coste y un tope.
 - Zernio dice que no hay cuentas conectadas: se conecta una red en la app de Zernio y se vuelve a pedir. Si Claude no llega a Zernio, se quita el conector y se añade de nuevo.
