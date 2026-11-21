@@ -1,21 +1,28 @@
-# El sistema para crear vídeos con Claude
+# El sistema para crear con Claude
 
-Guía de @claudexplica. Versión D6, del 20 de noviembre de 2026.
+Guía de @claudexplica. Versión D8, del 21 de noviembre de 2026.
 
-Este es el sistema de @claudexplica para crear vídeos cortos para TikTok, Instagram y YouTube desde un chat de Claude. Claude hace el trabajo con una herramienta de vídeo conectada a tu cuenta.
+Este es el sistema de @claudexplica para crear con Claude desde un chat: vídeos para TikTok, Instagram y YouTube, una tienda online, voces y locuciones, y tus redes sociales. Claude hace el trabajo con una herramienta conectada a tu cuenta.
 
-## Lo primero: qué vídeo quieres
+## Lo primero: qué quieres crear
 
-Hay cuatro caminos. Se elige uno antes de empezar:
+Hay seis caminos. Se elige uno antes de empezar:
 
-- **A. Un vídeo sin salir en cámara.** No hace falta tener nada grabado: Claude encuentra qué funciona en tu tema y escribe el guion, y Revid pone la voz, las imágenes, los subtítulos y la música. Para datos curiosos, historias o explicaciones. Es la parte A.
+**Vídeos**
+
+- **A. Un vídeo sin salir en cámara.** No hace falta tener nada grabado: Claude encuentra qué funciona en tu tema y escribe el guion, y Revid pone la voz, las imágenes (también escenas generadas con IA), los subtítulos y la música. Para datos curiosos, historias o explicaciones. Es la parte A.
 - **B. Editar un vídeo que ya has grabado.** Subtítulos, cortes, música e imágenes de apoyo, o cortos sacados de un vídeo largo de YouTube. Lo hace Submagic. Es la parte B.
-- **C. Escenas generadas con IA.** Un clip de cine, un anuncio de producto o un personaje que no existe, desde una descripción o una foto. Lo hace Higgsfield. Es la parte C.
-- **D. Un vídeo con presentador.** Alguien que habla a cámara con tu guion, sin que tengas que grabarte: uno de sus presentadores o un avatar tuyo. Lo hace HeyGen. Es la parte D.
+- **C. Un vídeo con presentador.** Alguien que habla a cámara con tu guion, sin que tengas que grabarte: uno de sus presentadores o un avatar tuyo. Lo hace HeyGen. Es la parte C.
 
-Las cuatro partes están enteras más abajo, en esta misma página.
+**Más cosas**
 
-Todas necesitan una cuenta de Claude. Para las partes A, B y C sirve la gratuita, que admite un solo conector personalizado: si ya hay otro puesto, hay que quitarlo antes de añadir el nuevo. La parte D, según HeyGen, pide un plan de pago de Claude.
+- **D. Una tienda online.** Claude la monta con tus productos y tus precios, lista para vender. Lo hace Shopify. Es la parte D.
+- **E. Una voz.** Una locución para un vídeo o un audio, tu propia voz clonada o un agente que contesta hablando. Lo hace ElevenLabs. Es la parte E.
+- **F. Tus redes sociales.** Publicar y programar en todas a la vez, contestar comentarios y mensajes, y ver qué funciona. Lo hace Zernio. Es la parte F.
+
+Las seis partes están enteras más abajo, en esta misma página. Los caminos se pueden juntar: una locución de la parte E para tu vídeo, o un vídeo de las partes A, B o C publicado en todas tus redes con la parte F.
+
+Todas necesitan una cuenta de Claude. Revid, Submagic, HeyGen y Zernio se añaden como conector personalizado, y la cuenta gratuita de Claude admite uno solo: si ya hay otro puesto, hay que quitarlo antes de añadir el nuevo. Shopify y ElevenLabs están en el directorio de conectores de Claude y no cuentan para ese límite. La parte C, según HeyGen, pide un plan de pago de Claude.
 
 ---
 
@@ -138,55 +145,13 @@ Las cuentas de TikTok, YouTube, Instagram, X, Facebook y LinkedIn se conectan en
 
 ---
 
-## Parte C. Escenas generadas con IA, con Higgsfield
-
-Son tres pasos:
-
-1. Crear la cuenta de Higgsfield y elegir el plan. Una sola vez.
-2. Conectarla a Claude. Una sola vez.
-3. Pedirle a Claude el vídeo (recetas 10 y 11).
-
-### Lo primero: la cuenta de Higgsfield
-
-Todo empieza por crear la cuenta de Higgsfield desde este enlace, en el mismo navegador y sin cerrarlo: https://higgsfield.ai?fpr=claudexplica
-
-Al crearla, Higgsfield da hasta un 50 % de descuento en el primer pago durante las tres horas siguientes. El descuento que vale es el que se ve en pantalla. Por eso conviene crear la cuenta cuando ya se va a elegir el plan.
-
-### Qué más hace falta
-
-- Un plan de Higgsfield. Desde Claude, cada vídeo gasta créditos del plan: los modelos ilimitados y las generaciones gratis de su web no valen aquí. Las cuentas nuevas que cumplen sus condiciones pueden tener 3 días de prueba gratis en Claude.
-- Precios con pago anual, el 20 de noviembre de 2026: Starter, 19 dólares al mes, con 270 créditos al mes. Plus, 33 dólares al mes, con 1.200 créditos. Ultra, 50 dólares al mes, con 3.000 créditos.
-- Lo que gasta un clip de 10 segundos con Seedance 2.5: 70 créditos en 720p, 160 en 1080p y 280 en 4K. Con el Starter salen unos 3 clips de 10 segundos al mes en 720p; con el Plus, unos 17.
-
-### Conectar Higgsfield a Claude, una sola vez
-
-Con la cuenta de Higgsfield ya creada:
-
-1. Abrir este enlace, que deja el conector ya rellenado: https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Higgsfield&connectorUrl=https%3A%2F%2Fmcp.higgsfield.ai%2Fmcp
-   Si no se rellena solo: en los conectores de Claude (https://claude.ai/customize/connectors), «Add» y «Add custom connector». Nombre: Higgsfield. Dirección: `https://mcp.higgsfield.ai/mcp`. Es una dirección para Claude: abierta en el navegador no sirve.
-   Se hace en claude.ai desde un navegador o en la app del ordenador; una vez puesto, sirve también en la app del móvil.
-2. Seguir hasta «Add» y pulsar «Connect». Se abre Higgsfield: se entra con la cuenta recién creada y se autoriza el acceso.
-3. De vuelta en el chat, mirar que Higgsfield está activado (botón «+» y «Connectors») y preguntar: «¿Cuántos créditos me quedan en Higgsfield?». Si contesta con el saldo, está conectado.
-
-### Receta 10. Un vídeo desde una descripción o una foto
-
-1. Se le cuenta a Claude la escena, el formato y la duración. Por ejemplo: «Con Higgsfield, haz un vídeo vertical de 10 segundos en 720p: un chico en bici por una avenida con palmeras al atardecer. Antes de generarlo, dime cuántos créditos cuesta». Para animar una foto, se adjunta la foto y se cuenta qué tiene que pasar.
-2. Claude elige el modelo, escribe la descripción completa y dice el precio en créditos. Se le puede pedir que lo haga con dos modelos para comparar.
-3. Claude avisa cuando está listo, con el enlace para verlo. Los cambios se piden con palabras, y cada uno es una generación nueva que gasta créditos.
-
-### Receta 11. Un anuncio de producto
-
-Se le dan a Claude las fotos del producto o su página: «Con Higgsfield, hazme anuncios de este producto con Ads Studio: (enlace o fotos)». Lo demás es igual que en la receta 10: primero el precio, después el vídeo.
-
----
-
-## Parte D. Un vídeo con presentador, con HeyGen
+## Parte C. Un vídeo con presentador, con HeyGen
 
 Son tres pasos:
 
 1. Crear la cuenta de HeyGen y conectarla a Claude. Una sola vez.
-2. Darle a Claude el tema o el guion (receta 12).
-3. Si quieres que el presentador seas tú, crear tu avatar en HeyGen (receta 13).
+2. Darle a Claude el tema o el guion (receta 10).
+3. Si quieres que el presentador seas tú, crear tu avatar en HeyGen (receta 11).
 
 ### Lo primero: la cuenta de HeyGen
 
@@ -206,13 +171,13 @@ Con la cuenta de HeyGen ya creada:
 2. Seguir hasta «Add», pulsar «Connect» y aprobar el acceso en HeyGen.
 3. De vuelta en el chat, mirar que HeyGen está activado (botón «+» y «Connectors») y preguntar: «¿Cuántos créditos me quedan en HeyGen?».
 
-### Receta 12. Un vídeo con presentador, desde un tema o un guion
+### Receta 10. Un vídeo con presentador, desde un tema o un guion
 
 1. Se le pide a Claude, por ejemplo: «Con HeyGen, haz un vídeo vertical de 30 segundos con un presentador que explique por qué el café quita el sueño, en español de España. Enséñame antes los presentadores y las voces».
 2. Claude escribe el guion, o usa el tuyo palabra por palabra si se lo das, y genera el vídeo con el presentador y la voz elegidos.
 3. Claude avisa cuando está listo, con el enlace para verlo. El vídeo queda también en «Projects», en HeyGen.
 
-### Receta 13. Que el presentador seas tú
+### Receta 11. Que el presentador seas tú
 
 Tu avatar se crea una vez en la app de HeyGen: se graba un vídeo corto hablando a cámara y se da el permiso para usar tu imagen. La cuenta gratis permite uno; con tu propia voz, desde el plan Creator.
 
@@ -220,12 +185,145 @@ Después se le pide a Claude: «Con HeyGen, haz este vídeo con mi avatar: (guio
 
 ---
 
+## Parte D. Una tienda online, con Shopify
+
+Son tres pasos:
+
+1. Entrar en Shopify desde el enlace del canal y activar el conector en Claude. Una sola vez.
+2. Pedirle a Claude la tienda (receta 12). No hace falta cuenta de Shopify para verla.
+3. Guardarla en tu cuenta de Shopify y abrirla al público (receta 13).
+
+### Lo primero: entrar en Shopify desde este enlace
+
+Todo empieza por abrir Shopify desde este enlace, en el mismo navegador en el que se usa Claude: https://shopify.pxf.io/yZNkvG
+
+No hace falta registrarse todavía. La cuenta se crea al guardar la tienda (receta 13), y tiene que ser en ese mismo navegador.
+
+### Qué cuesta
+
+- El conector y ver la tienda, nada.
+- Shopify, en España, el 21 de noviembre de 2026: 3 días gratis; después, 1 € al mes los 3 primeros meses, y luego el plan Basic, 32 € al mes, o 24 € al mes con pago anual.
+
+### Activar Shopify en Claude, una sola vez
+
+1. En el chat de Claude: botón «+», «Connectors» y Shopify. También desde https://claude.ai/directory/connectors/shopify
+2. Se pulsa «Connect». Está en el directorio de Claude, así que funciona con la cuenta gratuita y no cuenta como conector personalizado.
+
+### Receta 12. Tu tienda, desde una idea
+
+1. Se le dice a Claude qué vendes y cómo quieres que se vea. Por ejemplo: «Con Shopify, monta una tienda para vender velas artesanales, con un estilo cálido y minimalista».
+2. Después, los productos con sus precios: «Añade tres velas: lavanda a 18 €, vainilla a 18 € y un pack de las dos a 32 €».
+3. Claude enseña cómo queda. Los cambios se piden con palabras: «el titular más corto», «otro color de fondo».
+
+### Receta 13. Guardarla y abrirla al público
+
+1. Cuando la tienda guste, se le pide a Claude el enlace para guardarla en una cuenta de Shopify, y se abre en el mismo navegador del enlace del principio: https://shopify.pxf.io/yZNkvG
+2. Se crea la cuenta y la tienda queda guardada en ella.
+3. Antes de vender, en el panel de Shopify: pagos, envíos, impuestos y dominio.
+
+---
+
+## Parte E. Una voz, con ElevenLabs
+
+Son tres pasos:
+
+1. Crear la cuenta gratis de ElevenLabs y activar el conector en Claude. Una sola vez.
+2. Pedirle a Claude la locución (receta 14) o un agente de voz (receta 16).
+3. Si quieres que la voz sea la tuya, clonarla en ElevenLabs (receta 15).
+
+### Lo primero: la cuenta gratis de ElevenLabs
+
+Todo empieza por crear la cuenta de ElevenLabs desde este enlace: https://elevenlabs.io
+
+Es gratis: 10.000 créditos al mes, unos 10 minutos de voz. El conector de Claude se enlaza después con esta misma cuenta.
+
+### Qué más hace falta
+
+Para usar la voz en vídeos o audios con los que ganes dinero, o para clonar tu voz, un plan de ElevenLabs. Precios del 21 de noviembre de 2026:
+
+- Starter: 6 dólares al mes. Unos 30 minutos de voz, uso comercial y clonar tu voz con un audio corto.
+- Creator: 22 dólares al mes, 11 el primer mes. Unos 120 minutos de voz y la clonación profesional, la más fiel.
+
+### Activar ElevenLabs en Claude, una sola vez
+
+1. Abrir https://claude.ai/directory/connectors/elevenlabs y pulsar «Connect». También en el chat: botón «+», «Connectors» y ElevenLabs.
+2. Se abre ElevenLabs: se entra con la cuenta recién creada, se elige el espacio de trabajo y se pulsa «Authorize».
+3. Está en el directorio de Claude, así que funciona con la cuenta gratuita y no cuenta como conector personalizado.
+
+### Receta 14. Una locución para tu vídeo
+
+1. Se le da a Claude el texto, o se le pide que lo escriba, y cómo tiene que sonar. Por ejemplo: «Con ElevenLabs, lee este texto con una voz de hombre de España, cercana y tranquila. Enséñame antes tres voces: (texto)». La voz se pide por su acento («de España», «mexicana»).
+2. Claude devuelve un enlace para descargar el audio. El enlace caduca en unas dos horas: se descarga enseguida.
+3. Si algo no convence (el ritmo, una palabra, la voz), se le pide el cambio y genera otra vez esa parte.
+
+### Receta 15. Que la voz sea la tuya
+
+Tu voz se clona una vez en la web de ElevenLabs, en «Voices»: se sube o se graba un audio tuyo hablando, limpio y sin música. Pide el plan Starter.
+
+Después se le pide a Claude: «Con ElevenLabs, lee este texto con mi voz: (texto)». A partir de ahí, cada locución sale con tu voz sin volver a grabarte.
+
+### Receta 16. Un agente que contesta hablando
+
+Un agente de voz atiende a tus clientes: contesta dudas, explica precios o toma datos.
+
+1. Se le describe a Claude qué tiene que hacer. Por ejemplo: «Con ElevenLabs, crea un agente de voz para mi peluquería que conteste dudas de horarios y precios, en español de España. Horario: (…). Precios: (…)».
+2. Se le pide el enlace para hablar con él y se prueba.
+3. Los cambios se piden con palabras: «que salude más corto», «que pida el teléfono al final».
+
+---
+
+## Parte F. Tus redes sociales, con Zernio
+
+Son tres pasos:
+
+1. Crear la cuenta gratis de Zernio, conectar tus redes y conectarlo a Claude. Una sola vez.
+2. Publicar o programar desde el chat (receta 17).
+3. Contestar comentarios y mensajes, y ver qué funciona (recetas 18 y 19).
+
+### Lo primero: la cuenta gratis de Zernio
+
+Todo empieza por crear la cuenta de Zernio desde este enlace: https://zernio.link/alex-fernandez
+
+Las dos primeras cuentas de redes son gratis y no piden tarjeta. Dentro de Zernio se conectan las redes: Instagram, TikTok, YouTube, LinkedIn, X, Facebook, Threads o Pinterest.
+
+### Qué cuesta
+
+- Desde la tercera cuenta, 6 dólares al mes por cada una (precios del 21 de noviembre de 2026).
+- Los primeros 10.000 mensajes privados al mes, gratis.
+- Si promocionas una publicación, el presupuesto del anuncio se paga aparte, en cada red.
+
+### Conectar Zernio a Claude, una sola vez
+
+Con la cuenta de Zernio ya creada y alguna red conectada:
+
+1. Abrir este enlace, que deja el conector ya rellenado: https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Zernio&connectorUrl=https%3A%2F%2Fmcp.zernio.com%2Fmcp
+   Si no se rellena solo: en los conectores de Claude (https://claude.ai/customize/connectors), «Add» y «Add custom connector». Nombre: Zernio. Dirección: `https://mcp.zernio.com/mcp`. Es una dirección para Claude: abierta en el navegador solo da un error.
+   Se hace en claude.ai desde un navegador o en la app del ordenador; una vez puesto, sirve también en la app del móvil.
+2. Seguir hasta «Add». Se abre Zernio: se entra con la cuenta recién creada y se pulsa «Authorize».
+3. De vuelta en el chat, mirar que Zernio está activado (botón «+» y «Connectors») y preguntar: «¿Qué cuentas tengo conectadas en Zernio?».
+
+### Receta 17. Publicar o programar
+
+Se le pide a Claude, por ejemplo: «Con Zernio, publica esta foto con este texto en Instagram y LinkedIn el jueves a las 16:00». Si la foto o el vídeo está en tu móvil o tu ordenador, Claude da un enlace para subirlo. Claude puede escribir el texto de cada red a su medida.
+
+### Receta 18. Contestar comentarios y mensajes
+
+Se le pide a Claude: «Con Zernio, enséñame los comentarios y los mensajes sin contestar de esta semana y propón una respuesta para cada uno». Se revisan y se le dice cuáles enviar.
+
+### Receta 19. Ver qué funciona
+
+Se le pide a Claude: «Con Zernio, dime cuáles de mis publicaciones del último mes llegaron a más gente y a qué hora me conviene publicar». Sirve para decidir el siguiente contenido.
+
+---
+
 ## Si algo no sale
 
 - Claude dice que no tiene el conector: se activa en el botón «+», «Connectors», o se abre una conversación nueva.
-- Claude no deja añadir el conector: con Claude gratis solo cabe uno personalizado. Se quita el que haya.
+- Claude no deja añadir el conector: con Claude gratis solo cabe uno personalizado (Revid, Submagic, HeyGen o Zernio). Se quita el que haya. Shopify y ElevenLabs no cuentan.
 - Revid avisa al generar de que hace falta un plan: buscar y calcular el precio van con la cuenta gratis; generar pide un plan activo, aunque queden créditos. Al pagarlo, el código CLAUDEXPLICA.
 - Submagic dice que no hay créditos: se le pregunta a Claude cuántos quedan. Cada vídeo necesita todos sus créditos; si no llegan, no se cobra nada.
 - El enlace de subida ha caducado o rechaza el vídeo: se le pide otro a Claude, o un vídeo más corto.
-- Higgsfield no genera por falta de créditos: se le pregunta a Claude el saldo. Desde Claude solo valen los créditos del plan o la prueba gratis.
 - HeyGen no se deja conectar o no responde: según HeyGen, desde Claude hace falta un plan de pago de Claude.
+- La tienda de Shopify pide contraseña: hasta que se guarda en una cuenta y se abre al público, nadie puede comprar. La plantilla puede traer textos en inglés y no trae fotos: hay que revisarlos antes de abrirla.
+- El enlace del audio de ElevenLabs ya no abre: caduca en unas dos horas. Se le pide a Claude que lo genere otra vez.
+- Zernio dice que no hay cuentas conectadas: se conecta una red en la app de Zernio y se vuelve a pedir. Si Claude no llega a Zernio, se quita el conector y se añade de nuevo.
