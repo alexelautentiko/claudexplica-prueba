@@ -1,28 +1,49 @@
 # El sistema para crear con Claude
 
-Guía de @claudexplica. Versión D8, del 21 de noviembre de 2026.
+Guía de @claudexplica. Versión D9, del 21 de noviembre de 2026.
 
-Este es el sistema de @claudexplica para crear con Claude desde un chat: vídeos para TikTok, Instagram y YouTube, una tienda online, voces y locuciones, y tus redes sociales. Claude hace el trabajo con una herramienta conectada a tu cuenta.
+Este es el sistema de @claudexplica para crear con Claude desde un chat: vídeos, una tienda o un producto digital, voces y agentes que atienden a tus clientes, tus redes, una web, presentaciones e imágenes. Claude hace el trabajo, solo o con una herramienta conectada a tu cuenta.
 
 ## Lo primero: qué quieres crear
 
-Hay seis caminos. Se elige uno antes de empezar:
+Se elige una cosa antes de empezar. Si la persona ya ha dicho qué quiere, se va directo a su receta.
 
-**Vídeos**
+**Vídeo**
 
-- **A. Un vídeo sin salir en cámara.** No hace falta tener nada grabado: Claude encuentra qué funciona en tu tema y escribe el guion, y Revid pone la voz, las imágenes (también escenas generadas con IA), los subtítulos y la música. Para datos curiosos, historias o explicaciones. Es la parte A.
-- **B. Editar un vídeo que ya has grabado.** Subtítulos, cortes, música e imágenes de apoyo, o cortos sacados de un vídeo largo de YouTube. Lo hace Submagic. Es la parte B.
-- **C. Un vídeo con presentador.** Alguien que habla a cámara con tu guion, sin que tengas que grabarte: uno de sus presentadores o un avatar tuyo. Lo hace HeyGen. Es la parte C.
+- Un vídeo sin salir en cámara: parte A, recetas 1 y 2.
+- Un anuncio de tu producto: receta 4.
+- Editar un vídeo que ya has grabado: parte B, recetas 6 y 7.
+- Cortos de un vídeo largo: receta 8.
+- Un vídeo con presentador o con tu avatar: parte C, recetas 10 y 11.
 
-**Más cosas**
+**Vender**
 
-- **D. Una tienda online.** Claude la monta con tus productos y tus precios, lista para vender. Lo hace Shopify. Es la parte D.
-- **E. Una voz.** Una locución para un vídeo o un audio, tu propia voz clonada o un agente que contesta hablando. Lo hace ElevenLabs. Es la parte E.
-- **F. Tus redes sociales.** Publicar y programar en todas a la vez, contestar comentarios y mensajes, y ver qué funciona. Lo hace Zernio. Es la parte F.
+- Una tienda online: parte D, recetas 12 y 13.
+- Un producto digital, como un ebook o una plantilla: receta 14.
 
-Las seis partes están enteras más abajo, en esta misma página. Los caminos se pueden juntar: una locución de la parte E para tu vídeo, o un vídeo de las partes A, B o C publicado en todas tus redes con la parte F.
+**Voz y agentes**
 
-Todas necesitan una cuenta de Claude. Revid, Submagic, HeyGen y Zernio se añaden como conector personalizado, y la cuenta gratuita de Claude admite uno solo: si ya hay otro puesto, hay que quitarlo antes de añadir el nuevo. Shopify y ElevenLabs están en el directorio de conectores de Claude y no cuentan para ese límite. La parte C, según HeyGen, pide un plan de pago de Claude.
+- Una locución o tu propia voz: parte E, recetas 15 y 16.
+- Un agente de voz para tu web: receta 17.
+- Un agente que contesta el teléfono: receta 18.
+- Un agente de WhatsApp: receta 19.
+
+**Redes**
+
+- Publicar o programar en todas tus redes: parte F, receta 20.
+- Contestar comentarios y mensajes: receta 21.
+- Respuestas automáticas en Instagram: receta 22.
+- Ver qué funciona: receta 23.
+
+**Web y diseño**
+
+- Una web o una landing: parte G, receta 24.
+- Una presentación: receta 25.
+- Imágenes y carruseles: receta 26.
+
+Todas las partes están enteras más abajo, en esta misma página.
+
+Todas necesitan una cuenta de Claude. Revid, Submagic, HeyGen y Zernio se añaden como conector personalizado, y la cuenta gratuita de Claude admite uno solo: si ya hay otro puesto, hay que quitarlo antes de añadir el nuevo. Shopify, ElevenLabs y Canva están en el directorio de conectores de Claude y no cuentan para ese límite. Las recetas 24 y 25 las hace Claude solo. La parte C, según HeyGen, pide un plan de pago de Claude.
 
 Antes de usar una herramienta por primera vez en la conversación, Claude mira si trae sus propias instrucciones: una skill de esa herramienta, o las skills y guías que ofrece su conector. Si las hay, las carga y las sigue para manejarla. Esta guía dice qué se hace y en qué orden; las instrucciones de la herramienta, cómo se usa.
 
@@ -187,13 +208,13 @@ Después se le pide a Claude: «Con HeyGen, haz este vídeo con mi avatar: (guio
 
 ---
 
-## Parte D. Una tienda online, con Shopify
+## Parte D. Una tienda online o un producto digital, con Shopify
 
 Son tres pasos:
 
 1. Entrar en Shopify desde el enlace del canal y activar el conector en Claude. Una sola vez.
 2. Pedirle a Claude la tienda (receta 12). No hace falta cuenta de Shopify para verla.
-3. Guardarla en tu cuenta de Shopify y abrirla al público (receta 13).
+3. Guardarla en tu cuenta de Shopify y abrirla al público (receta 13). Con la tienda guardada, se le pueden añadir productos digitales (receta 14).
 
 ### Lo primero: entrar en Shopify desde este enlace
 
@@ -223,15 +244,23 @@ No hace falta registrarse todavía. La cuenta se crea al guardar la tienda (rece
 2. Se crea la cuenta y la tienda queda guardada en ella.
 3. Antes de vender, en el panel de Shopify: pagos, envíos, impuestos y dominio.
 
+### Receta 14. Un producto digital: un ebook o una plantilla
+
+Con la tienda ya guardada en tu cuenta de Shopify (receta 13):
+
+1. Se escribe el producto con Claude. Por ejemplo: «Escribe conmigo un ebook de 15 páginas sobre batch cooking para principiantes. Primero, el índice». Al terminar, se le pide en PDF.
+2. Se le pide a Claude que lo ponga a la venta: «Con Shopify, crea en mi tienda un producto digital: el ebook "Batch cooking fácil", a 9 €, con su descripción». Si hace falta, Claude instala la app de productos digitales de Shopify y dice cómo pasarle el archivo.
+3. Quien compra recibe el archivo para descargarlo. Antes de anunciarlo, se mira en el panel de Shopify cómo queda la página del producto.
+
 ---
 
-## Parte E. Una voz, con ElevenLabs
+## Parte E. Voz y agentes, con ElevenLabs
 
 Son tres pasos:
 
 1. Crear la cuenta gratis de ElevenLabs y activar el conector en Claude. Una sola vez.
-2. Pedirle a Claude la locución (receta 14) o un agente de voz (receta 16).
-3. Si quieres que la voz sea la tuya, clonarla en ElevenLabs (receta 15).
+2. Pedirle a Claude la locución (receta 15) o un agente (recetas 17 a 19): en tu web, al teléfono o en WhatsApp.
+3. Si quieres que la voz sea la tuya, clonarla en ElevenLabs (receta 16).
 
 ### Lo primero: la cuenta gratis de ElevenLabs
 
@@ -252,25 +281,45 @@ Para usar la voz en vídeos o audios con los que ganes dinero, o para clonar tu 
 2. Se abre ElevenLabs: se entra con la cuenta recién creada, se elige el espacio de trabajo y se pulsa «Authorize».
 3. Está en el directorio de Claude, así que funciona con la cuenta gratuita y no cuenta como conector personalizado.
 
-### Receta 14. Una locución para tu vídeo
+### Receta 15. Una locución para tu vídeo
 
 1. Se le da a Claude el texto, o se le pide que lo escriba, y cómo tiene que sonar. Por ejemplo: «Con ElevenLabs, lee este texto con una voz de hombre de España, cercana y tranquila. Enséñame antes tres voces: (texto)». La voz se pide por su acento («de España», «mexicana»).
 2. Claude devuelve un enlace para descargar el audio. El enlace caduca en unas dos horas: se descarga enseguida.
 3. Si algo no convence (el ritmo, una palabra, la voz), se le pide el cambio y genera otra vez esa parte.
 
-### Receta 15. Que la voz sea la tuya
+### Receta 16. Que la voz sea la tuya
 
 Tu voz se clona una vez en la web de ElevenLabs, en «Voices»: se sube o se graba un audio tuyo hablando, limpio y sin música. Pide el plan Starter.
 
 Después se le pide a Claude: «Con ElevenLabs, lee este texto con mi voz: (texto)». A partir de ahí, cada locución sale con tu voz sin volver a grabarte.
 
-### Receta 16. Un agente que contesta hablando
+### Receta 17. Un agente que contesta hablando
 
 Un agente de voz atiende a tus clientes: contesta dudas, explica precios o toma datos.
 
 1. Se le describe a Claude qué tiene que hacer. Por ejemplo: «Con ElevenLabs, crea un agente de voz para mi peluquería que conteste dudas de horarios y precios, en español de España. Horario: (…). Precios: (…)».
 2. Se le pide el enlace para hablar con él y se prueba.
 3. Los cambios se piden con palabras: «que salude más corto», «que pida el teléfono al final».
+
+### Receta 18. Un agente que contesta el teléfono
+
+El agente de la receta 17 también puede coger las llamadas de tu negocio. Hace falta un número de teléfono de Twilio, que es de pago (el número y los minutos), y unos minutos en la web de ElevenLabs.
+
+1. Se crea el agente con Claude, como en la receta 17, diciéndole que atiende llamadas. Por ejemplo: «Con ElevenLabs, crea un agente que conteste el teléfono de mi clínica, dé citas y, si no sabe algo, pida el nombre y el teléfono».
+2. Se consigue un número en https://www.twilio.com y se copian su «Account SID» y su «Auth Token».
+3. En ElevenLabs, en el apartado «Phone Numbers» de los agentes, se importa el número de Twilio con esos datos y se le asigna el agente. ElevenLabs deja Twilio configurado solo.
+4. Se llama al número para probarlo. Los cambios del agente se le siguen pidiendo a Claude.
+
+### Receta 19. Un agente de WhatsApp
+
+El agente contesta los mensajes y los audios de tu WhatsApp de empresa.
+
+Hace falta una cuenta de empresa en Meta y un número que no esté en uso en la app de WhatsApp ni con otro proveedor. Meta cobra aparte las plantillas y las llamadas.
+
+1. Se crea el agente con Claude, como en la receta 17, diciéndole que atiende por WhatsApp. Por ejemplo: «Con ElevenLabs, crea un agente que conteste por WhatsApp a los clientes de mi tienda, con mensajes cortos y en español de España».
+2. En ElevenLabs, en el apartado «WhatsApp» de los agentes, se pulsa «Import account» y se siguen los pasos de Meta: elegir o crear la cuenta de empresa y el número, y dar permiso.
+3. En la cuenta importada, se le asigna el agente. A partir de ahí contesta solo.
+4. Se le escribe desde otro móvil para probarlo.
 
 ---
 
@@ -279,8 +328,8 @@ Un agente de voz atiende a tus clientes: contesta dudas, explica precios o toma 
 Son tres pasos:
 
 1. Crear la cuenta gratis de Zernio, conectar tus redes y conectarlo a Claude. Una sola vez.
-2. Publicar o programar desde el chat (receta 17).
-3. Contestar comentarios y mensajes, y ver qué funciona (recetas 18 y 19).
+2. Publicar o programar desde el chat (receta 20).
+3. Contestar comentarios y mensajes, responder solo a quien comenta y ver qué funciona (recetas 21 a 23).
 
 ### Lo primero: la cuenta gratis de Zernio
 
@@ -304,28 +353,61 @@ Con la cuenta de Zernio ya creada y alguna red conectada:
 2. Seguir hasta «Add». Se abre Zernio: se entra con la cuenta recién creada y se pulsa «Authorize».
 3. De vuelta en el chat, mirar que Zernio está activado (botón «+» y «Connectors») y preguntar: «¿Qué cuentas tengo conectadas en Zernio?».
 
-### Receta 17. Publicar o programar
+### Receta 20. Publicar o programar
 
 Se le pide a Claude, por ejemplo: «Con Zernio, publica esta foto con este texto en Instagram y LinkedIn el jueves a las 16:00». Si la foto o el vídeo está en tu móvil o tu ordenador, Claude da un enlace para subirlo. Claude puede escribir el texto de cada red a su medida.
 
-### Receta 18. Contestar comentarios y mensajes
+### Receta 21. Contestar comentarios y mensajes
 
 Se le pide a Claude: «Con Zernio, enséñame los comentarios y los mensajes sin contestar de esta semana y propón una respuesta para cada uno». Se revisan y se le dice cuáles enviar.
 
-### Receta 19. Ver qué funciona
+### Receta 22. Respuestas automáticas en Instagram
+
+Quien comenta una palabra en tu publicación recibe tu mensaje privado, solo. Hace falta una cuenta profesional de Instagram conectada en Zernio.
+
+1. Se le pide a Claude, por ejemplo: «Con Zernio, crea una respuesta automática en mi último reel de Instagram: cuando alguien comente la palabra GUIA, mándale por privado este mensaje: (texto). Y contesta al comentario "Te lo he enviado por privado"».
+2. Claude la crea y la deja activa. Para verla funcionar, se comenta la palabra desde otra cuenta.
+3. Después se le puede preguntar cuánta gente la ha recibido y cuántos han pulsado el enlace.
+
+Solo responde a los comentarios nuevos, una vez por persona. Si el mensaje lleva botones, Instagram a veces no se los entrega a quien no sigue la cuenta: entonces es mejor el enlace escrito en el texto.
+
+### Receta 23. Ver qué funciona
 
 Se le pide a Claude: «Con Zernio, dime cuáles de mis publicaciones del último mes llegaron a más gente y a qué hora me conviene publicar». Sirve para decidir el siguiente contenido.
+
+---
+
+## Parte G. Una web, una presentación o imágenes
+
+Las recetas 24 y 25 las hace Claude solo, sin conectar nada. La 26 usa Canva, que está en el directorio de conectores de Claude.
+
+### Receta 24. Una web o una landing
+
+1. Se le describe a Claude lo que quieres. Por ejemplo: «Hazme una landing para mi peluquería: servicios, precios, horario y un botón de WhatsApp. Estilo cálido y moderno». Claude la hace en el chat, como artefacto, y se ve al momento.
+2. Los cambios se piden con palabras: «el titular más grande», «añade una sección de opiniones».
+3. Para compartirla, el botón «Publish» del artefacto da un enlace público.
+
+### Receta 25. Una presentación
+
+Se le pide a Claude, por ejemplo: «Hazme una presentación de 8 diapositivas para presentar mi negocio: (datos)». Claude la hace como archivo de PowerPoint para descargar; si en tu cuenta no puede crear archivos, se le pide como artefacto, que se ve a pantalla completa. Los cambios se piden con palabras.
+
+### Receta 26. Imágenes y carruseles, con Canva
+
+1. Se crea la cuenta de Canva en https://www.canva.com (sirve la gratuita) y se activa Canva en Claude: botón «+», «Connectors» y Canva. Se entra con la cuenta de Canva y se da permiso.
+2. Se le pide a Claude, por ejemplo: «Con Canva, hazme un carrusel de Instagram de 5 diapositivas con los 5 errores al empezar a correr, en naranja y crema». Claude enseña varias propuestas.
+3. Se elige una y se le piden los cambios con palabras. El diseño queda en tu cuenta de Canva, desde donde se descarga o se sigue editando.
 
 ---
 
 ## Si algo no sale
 
 - Claude dice que no tiene el conector: se activa en el botón «+», «Connectors», o se abre una conversación nueva.
-- Claude no deja añadir el conector: con Claude gratis solo cabe uno personalizado (Revid, Submagic, HeyGen o Zernio). Se quita el que haya. Shopify y ElevenLabs no cuentan.
+- Claude no deja añadir el conector: con Claude gratis solo cabe uno personalizado (Revid, Submagic, HeyGen o Zernio). Se quita el que haya. Shopify, ElevenLabs y Canva no cuentan.
 - Revid avisa al generar de que hace falta un plan: buscar y calcular el precio van con la cuenta gratis; generar pide un plan activo, aunque queden créditos. Al pagarlo, el código CLAUDEXPLICA.
 - Submagic dice que no hay créditos: se le pregunta a Claude cuántos quedan. Cada vídeo necesita todos sus créditos; si no llegan, no se cobra nada.
 - El enlace de subida ha caducado o rechaza el vídeo: se le pide otro a Claude, o un vídeo más corto.
 - HeyGen no se deja conectar o no responde: según HeyGen, desde Claude hace falta un plan de pago de Claude.
 - La tienda de Shopify pide contraseña: hasta que se guarda en una cuenta y se abre al público, nadie puede comprar. La plantilla puede traer textos en inglés y no trae fotos: hay que revisarlos antes de abrirla.
 - El enlace del audio de ElevenLabs ya no abre: caduca en unas dos horas. Se le pide a Claude que lo genere otra vez.
+- El número de WhatsApp no se deja importar: no puede estar en uso en la app de WhatsApp ni con otro proveedor. Hace falta otro número, o darlo de baja allí.
 - Zernio dice que no hay cuentas conectadas: se conecta una red en la app de Zernio y se vuelve a pedir. Si Claude no llega a Zernio, se quita el conector y se añade de nuevo.
