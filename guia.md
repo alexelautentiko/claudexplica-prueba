@@ -1,8 +1,8 @@
 # El sistema para crear con Claude
 
-Guía de @claudexplica. Versión D12.2, del 28 de noviembre de 2026.
+Guía de @claudexplica. Versión D13, del 28 de noviembre de 2026.
 
-Este es el sistema de @claudexplica para crear con Claude desde un chat: vídeos, una tienda o un producto digital, voces y agentes que atienden a tus clientes, el WhatsApp de tu negocio, tus redes, lo que se busca y lo que funciona en tu tema y en tu competencia, una web, presentaciones, imágenes y guiones. Claude hace el trabajo, solo o con una herramienta conectada a tu cuenta.
+Este es el sistema de @claudexplica para crear con Claude desde un chat: vídeos, una tienda o un producto digital, voces y agentes que atienden a tus clientes, el WhatsApp de tu negocio, tus redes, lo que se busca y lo que funciona en tu tema y en tu competencia, lo que cobra y promete tu competencia en su web, una web, presentaciones, imágenes y guiones. Claude hace el trabajo, solo o con una herramienta conectada a tu cuenta.
 
 ## Lo primero: qué quieres crear
 
@@ -24,6 +24,7 @@ Se elige una cosa antes de empezar. Si la persona ya ha dicho qué quiere, se va
 - Un producto digital, como un ebook o una plantilla: receta 14.
 - Qué dicen las reseñas de tu negocio y de tu competencia: parte J, receta 35.
 - Los negocios de tu zona, para conocer tu mercado: receta 36.
+- Los precios y lo que promete tu competencia en su web: parte L, receta 40.
 
 **Voz y agentes**
 
@@ -55,10 +56,11 @@ Se elige una cosa antes de empezar. Si la persona ya ha dicho qué quiere, se va
 - Una presentación: receta 25.
 - Imágenes y carruseles: receta 26.
 - Una mini app para tus clientes: receta 33.
+- Tu web, en un documento para que Claude conozca tu negocio: receta 41.
 
 Todas las partes están enteras más abajo, en esta misma página.
 
-Todas necesitan una cuenta de Claude. Revid, Submagic, HeyGen, Zernio, Wassenger y Apify se añaden como conector personalizado, y la cuenta gratuita de Claude admite uno solo: si ya hay otro puesto, hay que quitarlo antes de añadir el nuevo. Shopify, ElevenLabs, Lovable, Canva y vidIQ están en el directorio de conectores de Claude y no cuentan para ese límite. Las recetas 24, 25 y 31 a 33 las hace Claude solo. La parte C, según HeyGen, pide un plan de pago de Claude.
+Todas necesitan una cuenta de Claude. Revid, Submagic, HeyGen, Zernio, Wassenger y Apify se añaden como conector personalizado, y la cuenta gratuita de Claude admite uno solo: si ya hay otro puesto, hay que quitarlo antes de añadir el nuevo. Shopify, ElevenLabs, Lovable, Canva, vidIQ y Firecrawl están en el directorio de conectores de Claude y no cuentan para ese límite. Las recetas 24, 25 y 31 a 33 las hace Claude solo. La parte C, según HeyGen, pide un plan de pago de Claude.
 
 Al empezar una parte, Claude dice en una frase para qué va bien esa herramienta y para qué no (su línea «Va bien para»), junto al enlace para crear la cuenta. Si no encaja con lo que la persona quiere, propone la parte que sí encaja. Solo pregunta lo que puede bloquear: si su Claude es gratuito y ya tiene otro conector personalizado puesto, y en la parte C, si su Claude es de pago.
 
@@ -622,10 +624,53 @@ Claude escribe el título; vidIQ pone los datos de lo que se busca.
 
 ---
 
+## Parte L. La web de tu competencia y la tuya, con Firecrawl
+
+**Va bien para** leer de una vez varias páginas de una web, también las que a Claude se le resisten: los precios y servicios de tus competidores en una tabla, o las páginas de tu propia web en un documento para que Claude conozca tu negocio. **No va bien para** leer una página suelta o buscar algo en internet: eso Claude ya lo hace solo y gratis. Tampoco para páginas que piden entrar con una cuenta. Pide siempre a Claude cuántos créditos gastará: cada página cuesta uno, también si la web no se deja leer.
+
+Son tres pasos:
+
+1. Crear la cuenta gratis de Firecrawl y conectarla a Claude. Una sola vez.
+2. Pedirle a Claude las webs que quieres leer, con los créditos antes (recetas 40 y 41).
+3. Usar lo que Claude saca de ellas: una tabla o un documento.
+
+### Lo primero: la cuenta gratis de Firecrawl
+
+Todo empieza por abrir Firecrawl desde este enlace, en el mismo navegador en el que se usa Claude: https://firecrawl.link/claudexplica
+
+Ahí se crea la cuenta: es gratis y no pide tarjeta. Si un día pagas un plan, desde este enlace la primera compra lleva un 10 % de descuento. El conector de Claude se enlaza después con esta misma cuenta.
+
+### Qué cuesta
+
+Precios del 28 de noviembre de 2026:
+
+- Gratis: 1.000 créditos al mes. Leer una página gasta 1, así que 20 páginas gastan 20. Los que sobran no pasan al mes siguiente.
+- Hobby: 19 dólares al mes (16 al mes si se paga el año), con 5.000 créditos al mes. En los planes de pago, al acabarse los créditos sigue cobrando de 5 en 5 dólares hasta el tope que pongas: se pone un tope o se apaga en los ajustes de Firecrawl.
+
+### Conectar Firecrawl a Claude, una sola vez
+
+1. Abrir https://claude.ai/directory/connectors/firecrawl y pulsar «Connect». También desde el chat: botón «+», «Connectors», y buscar Firecrawl.
+2. Se abre Firecrawl: se entra con la cuenta recién creada, se elige el equipo y se aprueba el acceso.
+3. Está en el directorio de Claude, así que no cuenta como conector personalizado.
+
+### Receta 40. Los precios y la propuesta de tu competencia
+
+Se le pide a Claude, por ejemplo: «Con Firecrawl, lee las webs de estos 3 competidores: (enlace), (enlace) y (enlace), con su portada y su página de precios o servicios. Dime antes cuántos créditos gastarás y no pases de 30. Hazme una tabla con sus servicios, sus precios, a quién se dirigen y qué prometen en su portada, y dime en qué me puedo diferenciar».
+
+Son webs públicas y para uso propio: importa qué ofrecen, no copiar sus textos.
+
+### Receta 41. Tu web, en un documento para Claude
+
+Se le pide a Claude, por ejemplo: «Con Firecrawl, lee las páginas principales de (enlace de mi web): la portada y las que salen en su menú, máximo 20. Dime antes cuántos créditos gastarás. Hazme un documento con lo que ofrezco, los precios, las preguntas que me hacen y cómo hablo, para usarlo en mis próximos textos».
+
+El documento se guarda y se le pasa a Claude cuando lo necesites: para tus guiones (receta 31), tu plan de contenido (receta 32) o un agente que conteste por ti (parte E).
+
+---
+
 ## Si algo no sale
 
 - Claude dice que no tiene el conector: se activa en el botón «+», «Connectors», o se abre una conversación nueva.
-- Claude no deja añadir el conector: con Claude gratis solo cabe uno personalizado (Revid, Submagic, HeyGen, Zernio, Wassenger o Apify). Se quita el que haya. Shopify, ElevenLabs, Lovable, Canva y vidIQ no cuentan.
+- Claude no deja añadir el conector: con Claude gratis solo cabe uno personalizado (Revid, Submagic, HeyGen, Zernio, Wassenger o Apify). Se quita el que haya. Shopify, ElevenLabs, Lovable, Canva, vidIQ y Firecrawl no cuentan.
 - Revid avisa al generar de que hace falta un plan: buscar y calcular el precio van con la cuenta gratis; generar pide un plan activo, aunque queden créditos. Al pagarlo, el código CLAUDEXPLICA.
 - Submagic dice que no hay créditos: se le pregunta a Claude cuántos quedan. Cada vídeo necesita todos sus créditos; si no llegan, no se cobra nada.
 - El enlace de subida ha caducado o rechaza el vídeo: se le pide otro a Claude, o un vídeo más corto.
@@ -638,3 +683,5 @@ Claude escribe el título; vidIQ pone los datos de lo que se busca.
 - Apify dice que no queda crédito: el gratis vuelve al empezar el mes siguiente. Antes de cada búsqueda, se le pide a Claude el coste y un tope.
 - Zernio dice que no hay cuentas conectadas: se conecta una red en la app de Zernio y se vuelve a pedir. Si Claude no llega a Zernio, se quita el conector y se añade de nuevo.
 - vidIQ dice que no quedan créditos: los 150 gratis vuelven el mes siguiente. Antes de cada búsqueda, se le pide a Claude cuántos gastará.
+- Firecrawl dice que no quedan créditos: los 1.000 gratis vuelven el mes siguiente. Antes de cada lectura, se le pide a Claude cuántos gastará.
+- Firecrawl no lee una página: algunas webs bloquean la lectura o piden entrar con una cuenta, y aun así gastan un crédito. Se prueba con otra página de la misma web o se le pega a Claude el texto.
